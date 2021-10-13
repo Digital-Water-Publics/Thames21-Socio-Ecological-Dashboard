@@ -44,24 +44,18 @@ map.on('load', () => {
                     'interpolate',
                     ['linear'],
                     ['get', 'senticent_polarity'],
-                    0,
+                    -0.01549,
                     '#d9ed92',
-                    0.1,
+                    0.05870,   
                     '#b5e48c',
-                    0.2,
+                    0.11758,
                     '#99d98c',
-                    0.3,
-                    '#76c893',
-                    0.4,
+                    0.13783,
                     '#52b69a',
-                    0.5,
+                    0.17332,
                     '#34a0a4',
-                    0.6,
-                    '#168aad',
-                    0.7,
-                    '#1a759f',
-                    0.8,
-                    '#1e6091'
+                    0.55357,
+                    '#168aad'
                 ],
                 'fill-opacity': 0.75
             }
@@ -97,25 +91,20 @@ map.on('load', () => {
                     'interpolate',
                     ['linear'],
                     ['get', 'senticent_polarity'],
-                    0,
+                    -0.03899,
                     '#d9ed92',
-                    0.1,
+                    0.07205 ,  
                     '#b5e48c',
-                    0.2,
+                    0.11972,
                     '#99d98c',
-                    0.3,
-                    '#76c893',
-                    0.4,
+                    0.14414,
                     '#52b69a',
-                    0.5,
+                    0.17022,
                     '#34a0a4',
-                    0.6,
-                    '#168aad',
-                    0.7,
-                    '#1a759f',
-                    0.8,
-                    '#1e6091'
-                ],
+                    0.63468,
+                    '#168aad'
+                ], 
+                           
                 'fill-opacity': 0.75
             }
         }
@@ -165,8 +154,8 @@ const geocoder = new MapboxGeocoder({
     });
      
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-const stateLegendEl = document.getElementById('state-legend');
-const countyLegendEl = document.getElementById('county-legend');
+const stateLegendEl = document.getElementById('oc-legend');
+const countyLegendEl = document.getElementById('mc-legend');
 map.on('zoom', () => {
     if (map.getZoom() > zoomThreshold) {
         stateLegendEl.style.display = 'none';
