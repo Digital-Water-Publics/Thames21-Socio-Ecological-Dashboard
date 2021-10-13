@@ -43,7 +43,7 @@ map.on('load', () => {
                 'fill-color': [
                     'interpolate',
                     ['linear'],
-                    ['get', 'val'],
+                    ['get', 'senticent_polarity'],
                     0,
                     '#d9ed92',
                     0.1,
@@ -96,7 +96,7 @@ map.on('load', () => {
                 'fill-color': [
                     'interpolate',
                     ['linear'],
-                    ['get', 'val'],
+                    ['get', 'senticent_polarity'],
                     0,
                     '#d9ed92',
                     0.1,
@@ -126,7 +126,7 @@ map.on('click', 'oc', (e) => {
     // Copy coordinates array.
     new mapboxgl.Popup()
         .setLngLat(e.lngLat)
-        .setHTML(e.features[0].properties.label)
+        .setHTML(e.features[0].properties.OC + "</br>" + e.features[0].properties.senticent_polarity)
         .addTo(map);
 });
 
@@ -134,7 +134,7 @@ map.on('click', 'mc_value', (e) => {
     // Copy coordinates array.
     new mapboxgl.Popup()
         .setLngLat(e.lngLat)
-        .setHTML(e.features[0].properties.label)
+        .setHTML(e.features[0].properties.MC + "</br>" + e.features[0].properties.senticent_polarity)
         .addTo(map);
 });
 
