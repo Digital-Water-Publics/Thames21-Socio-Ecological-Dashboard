@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>EI Catchment Explorer</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+    <script type ="text/javascript" src="assets/js/map.js"></script>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <style>
+
+    </style>
+    <div id="map"></div>
+    <div id="geocoder" class="geocoder"></div>
+    <div id="wb-legend" class="legend">
+        <h4>Sentiment Polarity Score</h4>
+    </div>  
+    
+    <div id="oc-legend" class="legend">
+        <h4>Sentiment Polarity Score</h4>
+        <div><span style="background-color: #168aad"></span>0.63468</div>
+        <div><span style="background-color: #34a0a4"></span>0.17022</div>
+        <div><span style="background-color: #52b69a"></span>0.14414</div>
+        <div><span style="background-color: #99d98c"></span>0.11972</div>
+        <div><span style="background-color: #b5e48c"></span>-0.07205</div>
+        <div><span style="background-color: #d9ed92"></span>--0.03899</div>
+    </div>     
+
+    <div id="mc-legend" class="legend" style="display: none">
+        <h4>Sentiment Polarity Score</h4>
+        <div><span style="background-color: ##168aad"></span>0.55357</div>
+        <div><span style="background-color: #34a0a4"></span>0.17332</div>
+        <div><span style="background-color: #52b69a"></span>0.13783</div>
+        <div><span style="background-color: #99d98c"></span>0.11758</div>
+        <div><span style="background-color: #b5e48c"></span>-0.05870</div>
+        <div><span style="background-color: #d9ed92"></span>--0.01549</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,97 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>EI Catchment Explorer</title>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
-    <script type ="text/javascript" src="assets/js/map.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-        .geocoder {
-position: absolute;
-z-index: 1;
-width: 50%;
-left: 50%;
-margin-left: -25%;
-top: 100px;
-}
-.mapboxgl-ctrl-geocoder {
-min-width: 100%;
-}
-#map {
-margin-top: 150px;
-}
+
+        /* Gray */
     </style>
 </head>
 
 <body>
-    <style>
-        .legend {
-            background-color: #fff;
-            border-radius: 3px;
-            bottom: 30px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-            padding: 10px;
-            position: absolute;
-            right: 10px;
-            z-index: 1;
-        }
+    <div class="spacer layer1">
+        <h1 style="text-align: center;"> How do twitter users feel about London rivers?</h1>
 
-        .legend h4 {
-            margin: 0 0 10px;
-        }
+        <div style="text-align: left;margin-left: 15vw;">
+            <h2> Welcome! </h2>
+            <p style="max-width: 30%;"> This map shows social media sentiment about 545 water
+                bodies in the Thames river basin district. Social media sentiment is based on more than 3 million tweets
+                during the last 15 years that mention a water body by name. The map displays sentiment polarity, which
+                means that Twitter users have either expressed negative (green) or positive (blue) views about their local water bodies.</p>
+            <p>You can zoom in or out to switch between three different scales:
+                </br>- management catchment
+                </br>- operational catchment
+                </br>- water body</p>
+            <h2>Start by finding your local river!</h2>
+            <p>Do people feel positive or negative about it?</p>
 
-        .legend div span {
-            border-radius: 50%;
-            display: inline-block;
-            height: 10px;
-            margin-right: 5px;
-            width: 10px;
-        }
-    </style>
-    <h1 style="text-align: center;"> EI Catchment Explorer</h1>
-    <div style="top: 0;right: 0;position: absolute;">
-        <img src="assets/images/thames_21_logo.png" style="height: 6.8rem;width: 6.8rem;">
+            <a href="map.html" class="button button4">Explore the Map</a>
+        </div>
+
+
+        <div style="width: 50%;float: right;position: relative;margin-top: -30vw;">
+            <div class="row">
+                <div class="column">
+                    <a href="https://www.thames21.org.uk/">
+                        <img src="assets/images/thames_21_logo.png" style="height: 15vw;width: 15vw;">
+                    </a>
+                </div>
+                <div class="column">
+                    <a href="https://www.ox.ac.uk/">
+                        <img src="ox_brand1_pos_rect.gif" style="height: 5vw;width: 15vw;">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div id="map"></div>
-    <div id="geocoder" class="geocoder"></div>
-    <div id="wb-legend" class="legend">
-        <h4>Sentiment Polarity Score</h4>
-    </div>  
-    
-    <div id="oc-legend" class="legend">
-        <h4>Sentiment Polarity Score</h4>
-        <div><span style="background-color: #168aad"></span>0.63468</div>
-        <div><span style="background-color: #34a0a4"></span>0.17022</div>
-        <div><span style="background-color: #52b69a"></span>0.14414</div>
-        <div><span style="background-color: #99d98c"></span>0.11972</div>
-        <div><span style="background-color: #b5e48c"></span>-0.07205</div>
-        <div><span style="background-color: #d9ed92"></span>--0.03899</div>
-    </div>     
-
-    <div id="mc-legend" class="legend" style="display: none">
-        <h4>Sentiment Polarity Score</h4>
-        <div><span style="background-color: ##168aad"></span>0.55357</div>
-        <div><span style="background-color: #34a0a4"></span>0.17332</div>
-        <div><span style="background-color: #52b69a"></span>0.13783</div>
-        <div><span style="background-color: #99d98c"></span>0.11758</div>
-        <div><span style="background-color: #b5e48c"></span>-0.05870</div>
-        <div><span style="background-color: #d9ed92"></span>--0.01549</div>
-    </div>
-
 </body>
 
 </html>

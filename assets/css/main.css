@@ -1,0 +1,128 @@
+body {
+    margin: p;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: white;
+    background: #00131c;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    padding: 100px 20vw;
+}
+
+.spacer {
+    aspect-ratio: 960/450;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url('wave-haikei.svg');
+}
+
+
+.layer2 {
+    background-image: url('blob.svg');
+}
+
+.column {
+    text-align: center;
+    width: 0%;
+    margin-top: 2vw;
+    padding: 5px;
+    margin-left: 15vw;
+}
+
+.column:hover {
+    opacity: 0.8;
+    scale: 0.8;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.button {
+    background-color: #4CAF50;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4%;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.8;
+    scale: 0.8;
+}
+
+.button4 {
+    background-color: #e7e7e7;
+    color: black;
+}
+
+
+/* map elements */
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.geocoder {
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+    top: 100px;
+}
+
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+
+#map {
+    margin-top: 150px;
+}
+
+.legend {
+    background-color: #fff;
+    border-radius: 3px;
+    bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+}
+
+.legend h4 {
+    margin: 0 0 10px;
+}
+
+.legend div span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+}
