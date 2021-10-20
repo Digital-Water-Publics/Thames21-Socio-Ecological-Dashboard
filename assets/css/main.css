@@ -89,7 +89,7 @@ box-shadow: inset -43px 43px 86px #99acb5,
     width: 50%;
     left: 50%;
     margin-left: -25%;
-    top: 25px;
+    top: 50px;
 }
 
 .mapboxgl-ctrl-geocoder {
@@ -99,7 +99,7 @@ box-shadow: inset -43px 43px 86px #99acb5,
     color: #00131c !important;
 }
 #map {
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 .legend {

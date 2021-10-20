@@ -5,13 +5,16 @@
     <meta charset="utf-8">
     <title>EI Catchment Explorer</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
-    <script type ="text/javascript" src="assets/js/map.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js">
+    </script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+        type="text/css">
+    <script type="text/javascript" src="assets/js/map.js"></script>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -19,15 +22,16 @@
     <style>
 
     </style>
-    <div id="map"></div>
-    <div id="geocoder" class="geocoder">
-        
+    <div id="map">
     </div>
-    <div style="border:#b5e48c solid 10px;width: 5%;fill: none;"></div>
+    <div id="geocoder" class="geocoder">
+    </div>
+    <a href="index.html" class="button button4" style="margin-top: 2vw;">Exit Map</a>
+    <p id="scale" style="text-align: center;;"> You are viewing at the Managment Catchment scale </p>
     <div id="wb-legend" class="legend">
         <h4>Sentiment Polarity Score</h4>
-    </div>  
-    
+    </div>
+
     <div id="oc-legend" class="legend">
         <h4>Sentiment Polarity Score</h4>
         <div><span style="background-color: #168aad"></span>0.63468</div>
@@ -36,7 +40,7 @@
         <div><span style="background-color: #99d98c"></span>0.11972</div>
         <div><span style="background-color: #b5e48c"></span>-0.07205</div>
         <div><span style="background-color: #d9ed92"></span>--0.03899</div>
-    </div>     
+    </div>
 
     <div id="mc-legend" class="legend" style="display: none">
         <h4>Sentiment Polarity Score</h4>
@@ -47,8 +51,6 @@
         <div><span style="background-color: #b5e48c"></span>-0.05870</div>
         <div><span style="background-color: #d9ed92"></span>--0.01549</div>
     </div>
-
-    <p id="scale" style="text-align: center;margin-top: 2%;"> You are viewing at the Managment Catchment scale </p>
 </body>
 
 </html>
