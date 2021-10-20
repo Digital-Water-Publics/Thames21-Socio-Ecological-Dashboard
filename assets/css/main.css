@@ -3,6 +3,9 @@ body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color: white;
     background: #00131c;
+    box-shadow:  20px 20px 60px #001018,
+             -20px -20px 60px #001620;
+             border-radius: 50px;
 }
 
 section {
@@ -19,15 +22,6 @@ section {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
-
-.layer1 {
-    background-image: url('wave-haikei.svg');
-}
-
-
-.layer2 {
-    background-image: url('blob.svg');
 }
 
 .column {
@@ -51,7 +45,10 @@ section {
 }
 
 .button {
-    background-color: #4CAF50;
+border-radius: 92px;
+background: #d5effb;
+box-shadow: inset -43px 43px 86px #99acb5,
+            inset 43px -43px 86px #ffffff;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: bold;
     /* Green */
@@ -61,7 +58,7 @@ section {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-radius: 4%;
+
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -128,4 +125,8 @@ section {
     height: 10px;
     margin-right: 5px;
     width: 10px;
+}
+
+.layer1 {
+    background-image: url('../../wave-haikei.svg');
 }
