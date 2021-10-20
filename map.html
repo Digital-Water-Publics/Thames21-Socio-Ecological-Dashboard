@@ -12,9 +12,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
     <script type ="text/javascript" src="assets/js/map.js"></script>
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
@@ -22,7 +20,9 @@
 
     </style>
     <div id="map"></div>
-    <div id="geocoder" class="geocoder"></div>
+    <div id="geocoder" class="geocoder">
+    </div>
+    <p id="scale" style="float: right;margin-top: 1.5%;"> You are viewing at the Managment Catchment scale </p>
     <div id="wb-legend" class="legend">
         <h4>Sentiment Polarity Score</h4>
     </div>  

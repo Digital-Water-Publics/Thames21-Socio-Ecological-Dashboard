@@ -1,5 +1,5 @@
 body {
-    margin: p;
+    margin: 10px;;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color: white;
     background: #00131c;
@@ -92,15 +92,17 @@ section {
     width: 50%;
     left: 50%;
     margin-left: -25%;
-    top: 100px;
+    top: 25px;
 }
 
 .mapboxgl-ctrl-geocoder {
     min-width: 100%;
 }
-
+.mapboxgl-popup-content{
+    color: #00131c !important;
+}
 #map {
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .legend {
@@ -112,6 +114,7 @@ section {
     padding: 10px;
     position: absolute;
     right: 10px;
+    color: #00131c;
     z-index: 1;
 }
 

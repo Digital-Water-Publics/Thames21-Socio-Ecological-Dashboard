@@ -191,15 +191,19 @@ window.onload = function () {
             stateLegendEl.style.display = 'none';
             riverLegendEl.style.display = 'none';
             countyLegendEl.style.display = 'block';
+            document.getElementById("scale").innerHTML = "You are viewing at the Managment Catchment scale"
         } else {
             stateLegendEl.style.display = 'block';
             countyLegendEl.style.display = 'none';
+            riverLegendEl.style.display = 'none';
+            document.getElementById("scale").innerHTML = "You are viewing at the Operational Catchment scale"
         }
 
         if (map.getZoom() <= 2) {
             stateLegendEl.style.display = 'none';
             riverLegendEl.style.display = 'block';
             countyLegendEl.style.display = 'none';
+            document.getElementById("scale").innerHTML = "You are viewing at the water body scale"
         }
 
     });
