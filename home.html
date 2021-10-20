@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: p;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            color: white;
+            background: #00131c;
+        }
+
+        section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+            padding: 100px 20vw;
+        }
+
+        .spacer {
+            aspect-ratio: 960/450;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .layer1 {
+            background-image: url('wave-haikei.svg');
+        }
+
+
+        .layer2 {
+            background-image: url('blob.svg');
+        }
+
+        .column {
+            float: left;
+            width: 0%;
+            margin-top: 2vw;
+            padding: 5px;
+            margin-left: 15vw;
+        }
+
+        /* Clear floats after image containers */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spacer layer1">
+        <h1 style="text-align: center;"> How do twitter users feel about London rivers?</h1>
+
+        <h2 style="text-align: left;margin-left: 15vw;"> Welcome! </h2>
+        <p style="text-align: left;margin-left: 15vw;width: 30%;"> This map shows social media sentiment about 545 water
+            bodies in the Thames river basin district. Social media sentiment is based on more than 3 million tweets
+            during the last 15 years that mention a water body by name. The map displays sentiment polarity, which means
+            that Twitter users have either expressed negative (green) or positive (blue) views about their local water
+            bodies.</p>
+
+        <div class="row">
+            <div class="column">
+                <img src="ox_brand5_rev_rect.gif" style="height: 5vw;width: 15vw;">
+            </div>
+            <div class="column">
+                <img src="assets/images/thames_21_logo.png" style="height: 3vw;width: 5vw;">
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <h1>Nice Curves</h1>
+        <p>
+            <lor></lor>
+        </p>
+    </section>
+    <div class="spacer layer2"></div>
+</body>
+
+</html>
