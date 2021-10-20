@@ -56,6 +56,27 @@
             clear: both;
             display: table;
         }
+
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button4 {
+            background-color: #e7e7e7;
+            color: black;
+        }
+
+        /* Gray */
     </style>
 </head>
 
@@ -63,30 +84,37 @@
     <div class="spacer layer1">
         <h1 style="text-align: center;"> How do twitter users feel about London rivers?</h1>
 
-        <h2 style="text-align: left;margin-left: 15vw;"> Welcome! </h2>
-        <p style="text-align: left;margin-left: 15vw;width: 30%;"> This map shows social media sentiment about 545 water
-            bodies in the Thames river basin district. Social media sentiment is based on more than 3 million tweets
-            during the last 15 years that mention a water body by name. The map displays sentiment polarity, which means
-            that Twitter users have either expressed negative (green) or positive (blue) views about their local water
-            bodies.</p>
+        <div style="text-align: left;margin-left: 15vw;">
+            <h2 > Welcome! </h2>
+            <p style="max-width: 30%;"> This map shows social media sentiment about 545 water
+                bodies in the Thames river basin district. Social media sentiment is based on more than 3 million tweets
+                during the last 15 years that mention a water body by name. The map displays sentiment polarity, which means
+                that Twitter users have either expressed negative (green) or positive (blue) views about their local water
+                bodies.</p>
+                <p>You can zoom in or out to switch between three different scales: 
+                </br>- management catchment 
+                </br>- operational catchment
+                </br>- water body</p>
+                <h2>Start by finding your local river!</h2>
+                <p>Do people feel positive or negative about it?</p>
 
-        <div class="row">
-            <div class="column">
-                <img src="ox_brand5_rev_rect.gif" style="height: 5vw;width: 15vw;">
+                <button class="button button4">Explore the Map</button>
             </div>
-            <div class="column">
-                <img src="assets/images/thames_21_logo.png" style="height: 3vw;width: 5vw;">
-            </div>
+
+
+        <div style="width: 50%;float: right;position: relative;margin-top: -11vw;">
+            <div class="row">
+                <div class="column">
+                    <img src="ox_brand5_rev_rect.gif" style="height: 5vw;width: 15vw;">
+                </div>
+                <div class="column">
+                    <img src="assets/images/thames_21_logo.png" style="height: 5vw;width: 5vw;">
+                </div>
+            </div> 
         </div>
-    </div>
 
-    <section>
-        <h1>Nice Curves</h1>
-        <p>
-            <lor></lor>
-        </p>
-    </section>
-    <div class="spacer layer2"></div>
+
+    </div>
 </body>
 
 </html>
