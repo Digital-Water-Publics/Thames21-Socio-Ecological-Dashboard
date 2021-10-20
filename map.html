@@ -14,6 +14,7 @@
     <link rel="stylesheet"
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
         type="text/css">
+        
     <script type="text/javascript" src="assets/js/map.js"></script>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -24,6 +25,8 @@
     </style>
     <div id="map">
     </div>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" style="visibility: visible;width: 73px;height:20px;float: right !important;margin-top: 50px !important;"data-show-count="false">Tweet how your river makes you feel</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
     <div id="geocoder" class="geocoder">
     </div>
     <a href="index.html" class="button button4" style="margin-top: 2vw;">Exit Map</a>
@@ -40,6 +43,9 @@
         <div><span style="background-color: #99d98c"></span>0.11972</div>
         <div><span style="background-color: #b5e48c"></span>-0.07205</div>
         <div><span style="background-color: #d9ed92"></span>--0.03899</div>
+        <div class="tooltip">&#x1F6C8;
+            <span class="tooltiptext">The Sentiment Polarity Score measures how positively or negatively people talk about rivers on Twitter. The score can have a value between -1 (extremely negative) and 1 (extremely positive) but will usually fall somewhere in between. Negative sentiment is coloured green and positive sentiment is coloured blue.</span>
+          </div>
     </div>
 
     <div id="mc-legend" class="legend" style="display: none">

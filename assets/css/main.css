@@ -105,12 +105,13 @@ box-shadow: inset -43px 43px 86px #99acb5,
 .legend {
     background-color: #fff;
     border-radius: 3px;
-    bottom: 30px;
+    top: 150px;
+    height: fit-content;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     padding: 10px;
     position: absolute;
-    right: 10px;
+    left: 10px;
     color: #00131c;
     z-index: 1;
 }
@@ -130,3 +131,36 @@ box-shadow: inset -43px 43px 86px #99acb5,
 .layer1 {
     background-image: url('../../wave-haikei.svg');
 }
+
+
+/*tooltip*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    float: right;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color:#00131c;
+    color: #fff;
+    text-align:left;
+    border-radius: 6px;
+    padding: 5px 0;
+    height: fit-content;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .twitter-share-button{
+      float: right !important;
+      margin-top: 50px !important;
+  }
