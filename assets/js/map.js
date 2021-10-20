@@ -10,8 +10,8 @@ window.onload = function () {
         zoom: 7
     });
 
-    const zoomThreshold = 9;
-    const zoomMid = 7;
+    const zoomThreshold = 11;
+    const zoomMid = 8;
     const zoomMin = 5;
 
     map.on('load', () => {
@@ -23,8 +23,8 @@ window.onload = function () {
         map.addLayer({
             'id': 'mc_value',
             'source': 'mc',
-            'maxzoom': 9,
-            'minzoom': 7,
+            'maxzoom': 8,
+            'minzoom': 5,
             'type': 'fill',
             'paint': {
                 'fill-color': [
@@ -48,18 +48,18 @@ window.onload = function () {
             }
         }, );
 
-        map.addLayer({
-            'id': 'outline',
-            'maxzoom':11,
-            'minzoom': 9.1,
-            'type': 'line',
-            'source': 'mc',
-            'layout': {},
-            'paint': {
-                'line-color': '#000',
-                'line-width': 3
-            }
-        });
+        // map.addLayer({
+        //     'id': 'outline',
+        //     'maxzoom':11,
+        //     'minzoom': 9.1,
+        //     'type': 'line',
+        //     'source': 'mc',
+        //     'layout': {},
+        //     'paint': {
+        //         'line-color': '#000',
+        //         'line-width': 3
+        //     }
+        // });
 
         map.addSource('oc', {
             'type': 'geojson',
@@ -67,11 +67,10 @@ window.onload = function () {
         });
 
         map.addLayer({
-            'maxzoom': 14,
-            'minzoom': 11.1,
+            'maxzoom': 11,
+            'minzoom': 8,
             'id': 'oc',
             'source': 'oc',
-            'minzoom': zoomMin,
             'type': 'fill',
             // only include features for which the "isCounty"
             // property is "true"
@@ -106,7 +105,8 @@ window.onload = function () {
         map.addLayer({
             'id': 'wb_value',
             'source': 'wb',
-            'minzoom': 16.1,
+            'maxzoom': 14,
+            'minzoom': 11,
             'type': 'fill',
             'paint': {
                 'fill-color': [
@@ -183,26 +183,33 @@ window.onload = function () {
     });
 
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-    const stateLegendEl = document.getElementById('oc-legend');
-    const countyLegendEl = document.getElementById('mc-legend');
+    const ocLegendEl = document.getElementById('oc-legend');
+    const mcLegendEl = document.getElementById('mc-legend');
     const riverLegendEl = document.getElementById('wb-legend');
+
+
     map.on('zoom', () => {
-        if (map.getZoom() > zoomThreshold) {
-            stateLegendEl.style.display = 'none';
+
+
+        if (map.getZoom() < 8) {
+            ocLegendEl.style.display = 'none';
             riverLegendEl.style.display = 'none';
-            countyLegendEl.style.display = 'block';
+            mcLegendEl.style.display = 'block';
             document.getElementById("scale").innerHTML = "You are viewing at the Managment Catchment scale"
-        } else {
-            stateLegendEl.style.display = 'block';
-            countyLegendEl.style.display = 'none';
+        } 
+        
+        
+        if (map.getZoom() < 11 && map.getZoom() > 8) {
+            ocLegendEl.style.display = 'block';
+            mcLegendEl.style.display = 'none';
             riverLegendEl.style.display = 'none';
             document.getElementById("scale").innerHTML = "You are viewing at the Operational Catchment scale"
         }
 
-        if (map.getZoom() <= 2) {
-            stateLegendEl.style.display = 'none';
+        if (map.getZoom() > 11) {
+            ocLegendEl.style.display = 'none';
             riverLegendEl.style.display = 'block';
-            countyLegendEl.style.display = 'none';
+            mcLegendEl.style.display = 'none';
             document.getElementById("scale").innerHTML = "You are viewing at the water body scale"
         }
 
