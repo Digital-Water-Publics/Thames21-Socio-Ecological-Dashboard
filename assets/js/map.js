@@ -710,6 +710,8 @@ var centroids = {
         localGeocoder: forwardGeocoder
     });
 
+    map.addControl(new mapboxgl.NavigationControl());
+    
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
     const ocLegendEl = document.getElementById('oc-legend');
     const mcLegendEl = document.getElementById('mc-legend');
