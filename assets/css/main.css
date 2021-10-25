@@ -40,6 +40,11 @@ section {
     height: 15vw;width: 15vw;
 }
 
+
+.logo_ox{
+    height: 5vw;width: 15vw;
+}
+
 .spacer {
     aspect-ratio: 960/450;
     width: 100%;
