@@ -725,7 +725,7 @@ var centroids = {
             ocLegendEl.style.display = 'none';
             riverLegendEl.style.display = 'none';
             mcLegendEl.style.display = 'block';
-            document.getElementById("scale").innerHTML = "You are viewing at the Managment Catchment scale"
+            document.getElementById("scale").innerHTML = "You are viewing at the Management Catchment scale"
         } 
         
         
@@ -740,7 +740,7 @@ var centroids = {
             ocLegendEl.style.display = 'none';
             riverLegendEl.style.display = 'block';
             mcLegendEl.style.display = 'none';
-            document.getElementById("scale").innerHTML = "You are viewing at the water body scale"
+            document.getElementById("scale").innerHTML = "You are viewing at the Waterbody scale"
         }
 
     });
