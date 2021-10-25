@@ -658,19 +658,19 @@ var centroids = {
         }
 
 
-    map.on('click', 'oc', (e) => {
-        // Copy coordinates array.
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
-            .addTo(map);
-    });
-
     map.on('click', 'mc_value', (e) => {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
+            .setHTML('<p> Management catchment: '+  e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
+            .addTo(map);
+    });
+
+    map.on('click', 'oc', (e) => {
+        // Copy coordinates array.
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML('<p> Operational catchment: '+  e.features[0].properties.OC + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
             .addTo(map);
     });
 
