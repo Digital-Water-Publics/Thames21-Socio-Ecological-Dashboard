@@ -37,6 +37,9 @@ section {
     opacity: 0.8;
     scale: 0.8;
 }
+#scale{
+    text-align: center;
+}
 
 /* Clear floats after image containers */
 .row::after {
@@ -73,6 +76,7 @@ section {
 .button4 {
     background-color: #e7e7e7;
     color: black;
+    margin-top: 2vw
 }
 
 
