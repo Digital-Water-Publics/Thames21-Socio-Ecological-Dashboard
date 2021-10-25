@@ -1,11 +1,12 @@
 body {
-    margin: 10px;;
+    margin: 10px;
+    ;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color: white;
     background: #00131c;
-    box-shadow:  20px 20px 60px #001018,
-             -20px -20px 60px #001620;
-             border-radius: 50px;
+    box-shadow: 20px 20px 60px #001018,
+        -20px -20px 60px #001620;
+    border-radius: 50px;
 }
 
 section {
@@ -45,10 +46,10 @@ section {
 }
 
 .button {
-border-radius: 92px;
-background: #d5effb;
-box-shadow: inset -43px 43px 86px #99acb5,
-            inset 43px -43px 86px #ffffff;
+    border-radius: 92px;
+    background: #d5effb;
+    box-shadow: inset -43px 43px 86px #99acb5,
+        inset 43px -43px 86px #ffffff;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: bold;
     /* Green */
@@ -95,10 +96,12 @@ box-shadow: inset -43px 43px 86px #99acb5,
 .mapboxgl-ctrl-geocoder {
     min-width: 100%;
 }
-.mapboxgl-popup-content{
+
+.mapboxgl-popup-content {
     background-color: #00131c !important;
     color: white !important;
 }
+
 #map {
     margin-top: 150px;
 }
@@ -133,35 +136,78 @@ box-shadow: inset -43px 43px 86px #99acb5,
     background-image: url('../../wave-haikei.svg');
 }
 
-
 /*tooltip*/
 .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
     float: right;
-  }
-  
-  .tooltip .tooltiptext {
+}
+
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 180px;
-    background-color:#00131c;
+    background-color: #00131c;
     color: #fff;
-    text-align:left;
+    text-align: left;
     border-radius: 6px;
     padding: 5px 0;
     height: fit-content;
-  
+
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
+}
 
-  .twitter-share-button{
-      float: right !important;
-      margin-top: 50px !important;
-  }
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.twitter-share-button {
+    float: right !important;
+    margin-top: 50px !important;
+}
+
+/*Home page*/
+
+.intro_div {
+    text-align: left;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+.intro_text {
+    max-width: 50%;
+}
+
+.logos {
+    width: 50%;
+    float: right;
+    position: relative;
+    margin-top: -30vw;
+}
+
+@media only screen and (max-width: 1100px) {
+    
+.logos {
+    margin-top: -50vw;
+}
+
+}
+/*MOBILE RESPONSIVE*/
+@media only screen and (max-width: 600px) {
+    .intro_text {
+        max-width: 100%;
+    }
+    .geocoder{
+        top:unset;
+        bottom: 100px;
+    }
+
+    .logos {
+        width: 50%;
+        float: right;
+        position: relative;
+        margin-top: -3vw;
+    }
+}
