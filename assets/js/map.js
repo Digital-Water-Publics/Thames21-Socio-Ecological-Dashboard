@@ -707,6 +707,7 @@ var centroids = {
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
         countries: 'gb',
+        zoom: 12,
         localGeocoder: forwardGeocoder
     });
 
