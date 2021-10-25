@@ -662,7 +662,7 @@ var centroids = {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.OC + "</br>" + e.features[0].properties.senticent_polarity)
+            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity + "</br> <p> Waterbody ecological status: ")
             .addTo(map);
     });
 
@@ -670,7 +670,7 @@ var centroids = {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.MC + "</br>" + e.features[0].properties.senticent_polarity)
+            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity + "</br> <p> Waterbody ecological status: ")
             .addTo(map);
     });
 
@@ -678,7 +678,7 @@ var centroids = {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.name + "</br>" + e.features[0].properties.senticent_polarity)
+            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity + "</br> <p> Waterbody ecological status: " + e.features[0].properties.status)
             .addTo(map);
     });
 
@@ -711,7 +711,7 @@ var centroids = {
     });
 
     map.addControl(new mapboxgl.NavigationControl());
-    
+
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
     const ocLegendEl = document.getElementById('oc-legend');
     const mcLegendEl = document.getElementById('mc-legend');

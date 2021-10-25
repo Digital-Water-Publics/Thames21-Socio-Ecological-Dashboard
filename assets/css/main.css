@@ -96,7 +96,8 @@ box-shadow: inset -43px 43px 86px #99acb5,
     min-width: 100%;
 }
 .mapboxgl-popup-content{
-    color: #00131c !important;
+    background-color: #00131c !important;
+    color: white !important;
 }
 #map {
     margin-top: 150px;
