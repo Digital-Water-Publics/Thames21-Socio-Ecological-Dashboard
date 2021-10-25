@@ -662,7 +662,7 @@ var centroids = {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity + "</br> <p> Waterbody ecological status: ")
+            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
             .addTo(map);
     });
 
@@ -670,7 +670,7 @@ var centroids = {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity + "</br> <p> Waterbody ecological status: ")
+            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
             .addTo(map);
     });
 
