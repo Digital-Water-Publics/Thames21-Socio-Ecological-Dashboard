@@ -1,11 +1,17 @@
 body {
     margin: 10px;
-    ;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color: white;
     background: #00131c;
     box-shadow: 20px 20px 60px #001018,
         -20px -20px 60px #001620;
+    border-radius: 50px;
+}
+
+a {
+    margin: 10px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #e7e7e7 !important;
     border-radius: 50px;
 }
 
@@ -36,13 +42,15 @@ section {
     margin-top: -30vw;
 }
 
-.logo_thames21{
-    height: 15vw;width: 15vw;
+.logo_thames21 {
+    height: 15vw;
+    width: 15vw;
 }
 
 
-.logo_ox{
-    height: 5vw;width: 15vw;
+.logo_ox {
+    height: 5vw;
+    width: 15vw;
 }
 
 .spacer {
@@ -65,7 +73,8 @@ section {
     opacity: 0.8;
     scale: 0.8;
 }
-#scale{
+
+#scale {
     text-align: center;
 }
 
@@ -106,7 +115,57 @@ section {
     margin-top: 2vw
 }
 
+.git {
+    height: 32px;
+    width: 32px;
+    margin-top: 2vw;
+    display: block;
+    right: 50vw;
+    position: fixed;
+}
 
+.git:hover{
+    transform: scale(1.8);
+}
+/* 
+.icon  {
+    width: 25%; 
+    display: inline-block;
+    padding: 5%;
+    Box-sizing: Border-box;
+    text-align: center;  
+    }
+    
+        
+    
+    #water{
+    animation: waterflow 15s linear infinite;
+    }
+    @keyframes waterflow {
+      from {transform:translateX(0px);
+      }
+    to {
+    transform:translateX(-300px);
+      }
+    }
+    
+    #water-rotate {
+     animation: water-rotate 15s linear infinite; 
+    -webkit-transform-origin: 100% 105%;
+    transform-origin: 100% 105%;
+    }
+    @keyframes water-rotate {
+     0% {
+      transform: rotateX(0deg);
+      }
+    50% {
+     transform: rotateX(360deg);
+      }
+     100% {
+     transform: rotateX(0deg);
+      } 
+    }
+     */
 /* map elements */
 #map {
     position: absolute;
@@ -202,19 +261,21 @@ section {
 /* Laptop config */
 
 @media only screen and (max-width: 1100px) {
-    
-.logos {
-    margin-top: -50vw;
-}
+
+    .logos {
+        margin-top: -50vw;
+    }
 
 }
+
 /*MOBILE RESPONSIVE*/
 @media only screen and (max-width: 600px) {
     .intro_text {
         max-width: 100%;
     }
-    .geocoder{
-        top:unset;
+
+    .geocoder {
+        top: unset;
         bottom: 100px;
     }
 
