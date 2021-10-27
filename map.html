@@ -10,12 +10,15 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">   
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js">
+    </script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+        type="text/css">
     <script type="text/javascript" src="assets/js/search_centroids.js"></script>
     <script type="text/javascript" src="assets/js/map.js"></script>
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" type="image/png" href="favcon.png"/>
+    <link rel="icon" type="image/png" href="favcon.png" />
 </head>
 
 <body>
@@ -24,18 +27,21 @@
     </style>
     <div id="map">
     </div>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" style="visibility: visible;width: 73px;height:20px;float: right !important;margin-top: 50px !important;"data-show-count="false">Tweet how your river makes you feel</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+        style="visibility: visible;width: 73px;height:20px;float: right !important;margin-top: 50px !important;"
+        data-show-count="false">Tweet how your river makes you feel</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
     <div id="geocoder" class="geocoder">
     </div>
     <a href="index.html" class="button button4">Exit Map</a>
     <p id="scale"> You are viewing at the Management Catchment scale </p>
-    
+
     <div id="wb-legend" class="legend">
         <h4>Sentiment Polarity Score</h4>
     </div>
 
-    
+
     <div id="wb-legend" class="legend">
         <h4>Sentiment Polarity Score</h4>
         <div><span style="background-color: #168aad"></span>0.855051</div>
@@ -44,9 +50,12 @@
         <div><span style="background-color: #99d98c"></span>0.100054</div>
         <div><span style="background-color: #b5e48c"></span>0.008247</div>
         <div><span style="background-color: #d9ed92"></span>-1.794540</div>
-        <div class="tooltip">&#x1F6C8;
-            <span class="tooltiptext">The Sentiment Polarity Score measures how positively or negatively people talk about rivers on Twitter. The score can have a value between -10 (extremely negative) and 10 (extremely positive) but will usually fall somewhere in between. Negative sentiment is coloured green and positive sentiment is coloured blue.</span>
-          </div>
+
+        <p style="width: 100%;">The <b>Sentiment Polarity Score</b> measures how positively or negatively people talk
+            about rivers on Twitter. The score can have a value between -10 (extremely negative) and 10 (extremely
+            positive) but will usually fall somewhere in between. Negative sentiment is coloured green and positive
+            sentiment is coloured blue.</p>
+
     </div>
 
     <div id="oc-legend" class="legend">
@@ -57,22 +66,25 @@
         <div><span style="background-color: #99d98c"></span>0.11972</div>
         <div><span style="background-color: #b5e48c"></span>-0.07205</div>
         <div><span style="background-color: #d9ed92"></span>-0.03899</div>
-        <div class="tooltip">&#x1F6C8;
-            <span class="tooltiptext">The Sentiment Polarity Score measures how positively or negatively people talk about rivers on Twitter. The score can have a value between -10 (extremely negative) and 10 (extremely positive) but will usually fall somewhere in between. Negative sentiment is coloured green and positive sentiment is coloured blue.</span>
-          </div>
+        <p style="width: 100%;">The <b>Sentiment Polarity Score</b> measures how positively or negatively people talk
+            about rivers on Twitter. The score can have a value between -10 (extremely negative) and 10 (extremely
+            positive) but will usually fall somewhere in between. Negative sentiment is coloured green and positive
+            sentiment is coloured blue.</p>
+
     </div>
 
     <div id="mc-legend" class="legend" style="display: none">
         <h4>Sentiment Polarity Score</h4>
-        <div><span style="background-color: ##168aad"></span>0.55357</div>
-        <div><span style="background-color: #34a0a4"></span>0.17332</div>
-        <div><span style="background-color: #52b69a"></span>0.13783</div>
-        <div><span style="background-color: #99d98c"></span>0.11758</div>
-        <div><span style="background-color: #b5e48c"></span>-0.05870</div>
-        <div><span style="background-color: #d9ed92"></span>-0.01549</div>
-        <div class="tooltip">&#x1F6C8;
-            <span class="tooltiptext">The Sentiment Polarity Score measures how positively or negatively people talk about rivers on Twitter. The score can have a value between -10 (extremely negative) and 10 (extremely positive) but will usually fall somewhere in between. Negative sentiment is coloured green and positive sentiment is coloured blue.</span>
-          </div>
+            <div><span style="background-color: ##168aad"></span>0.55357</div>
+            <div><span style="background-color: #34a0a4"></span>0.17332</div>
+            <div><span style="background-color: #52b69a"></span>0.13783</div>
+            <div><span style="background-color: #99d98c"></span>0.11758</div>
+            <div><span style="background-color: #b5e48c"></span>-0.05870</div>
+            <div><span style="background-color: #d9ed92"></span>-0.01549</div>
+            <p style="width: 100%;">The <b>Sentiment Polarity Score</b> measures how positively or negatively people
+                talk about rivers on Twitter. The score can have a value between -10 (extremely negative) and 10
+                (extremely positive) but will usually fall somewhere in between. Negative sentiment is coloured green
+                and positive sentiment is coloured blue.</p>
     </div>
 
 </body>
