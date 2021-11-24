@@ -10,10 +10,6 @@ window.onload = function () {
         zoom: 7
     });
 
-    const zoomThreshold = 11;
-    const zoomMid = 8;
-    const zoomMin = 5;
-
     map.on('load', () => {
         map.addSource('mc', {
             'type': 'geojson',
