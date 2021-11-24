@@ -135,31 +135,31 @@ window.onload = function () {
     function forwardGeocoder(query) {
         const matchingFeatures = [];
         for (const feature of centroids.features) {
-        // Handle queries with different capitalization
-        // than the source data by calling toLowerCase().
-        if (
-        feature.properties.name
-        .toLowerCase()
-        .includes(query.toLowerCase())
-        ) {
-        // Add a tree emoji as a prefix for custom
-        // data results using carmen geojson format:
-        // https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
-        feature['place_name'] = `🌊  ${feature.properties.name}`;
-        feature['center'] = feature.geometry.coordinates;
-        feature['place_type'] = ['park'];
-        matchingFeatures.push(feature);
-        }
+            // Handle queries with different capitalization
+            // than the source data by calling toLowerCase().
+            if (
+                feature.properties.name
+                .toLowerCase()
+                .includes(query.toLowerCase())
+            ) {
+                // Add a tree emoji as a prefix for custom
+                // data results using carmen geojson format:
+                // https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
+                feature['place_name'] = `🌊  ${feature.properties.name}`;
+                feature['center'] = feature.geometry.coordinates;
+                feature['place_type'] = ['park'];
+                matchingFeatures.push(feature);
+            }
         }
         return matchingFeatures;
-        }
+    }
 
 
     map.on('click', 'mc_value', (e) => {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Management catchment: '+  e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
+            .setHTML('<p> Management catchment: ' + e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
             .addTo(map);
     });
 
@@ -167,7 +167,7 @@ window.onload = function () {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Operational catchment: '+  e.features[0].properties.OC + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
+            .setHTML('<p> Operational catchment: ' + e.features[0].properties.OC + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
             .addTo(map);
     });
 
@@ -175,7 +175,7 @@ window.onload = function () {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: '+  e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity + "</br> <p> Waterbody ecological status: " + e.features[0].properties.status)
+            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity + "</br> <p> Waterbody ecological status: " + e.features[0].properties.status)
             .addTo(map);
     });
 
@@ -211,6 +211,7 @@ window.onload = function () {
     map.addControl(new mapboxgl.NavigationControl());
 
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    
     const ocLegendEl = document.getElementById('oc-legend');
     const mcLegendEl = document.getElementById('mc-legend');
     const riverLegendEl = document.getElementById('wb-legend');
@@ -218,15 +219,14 @@ window.onload = function () {
 
     map.on('zoom', () => {
 
-
         if (map.getZoom() < 8) {
             ocLegendEl.style.display = 'none';
             riverLegendEl.style.display = 'none';
             mcLegendEl.style.display = 'block';
             document.getElementById("scale").innerHTML = "You are viewing at the Management Catchment scale"
-        } 
-        
-        
+        }
+
+
         if (map.getZoom() < 11 && map.getZoom() > 8) {
             ocLegendEl.style.display = 'block';
             mcLegendEl.style.display = 'none';
