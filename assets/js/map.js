@@ -10,10 +10,11 @@ window.onload = function () {
         zoom: 7
     });
 
+    // Load map
     map.on('load', () => {
         map.addSource('mc', {
             'type': 'geojson',
-            'data': 'data/mc.geojson'
+            'data': 'data/mc_cat.geojson'
         });
 
         map.addLayer({
@@ -26,19 +27,13 @@ window.onload = function () {
                 'fill-color': [
                     'interpolate',
                     ['linear'],
-                    ['get', 'senticent_polarity'],
-                    -0.01549,
-                    '#d9ed92',
-                    0.05870,
-                    '#b5e48c',
-                    0.11758,
-                    '#99d98c',
-                    0.13783,
-                    '#52b69a',
-                    0.17332,
-                    '#34a0a4',
-                    0.55357,
-                    '#168aad'
+                    ['get', 'group'],
+                    1,
+                    '#b92727',
+                    2,
+                    '#5E107D',
+                    3,
+                    '#1a8812'
                 ],
                 'fill-opacity': 0.75
             }
@@ -59,7 +54,7 @@ window.onload = function () {
 
         map.addSource('oc', {
             'type': 'geojson',
-            'data': 'data/oc.geojson'
+            'data': 'data/oc_cat.geojson'
         });
 
         map.addLayer({
@@ -74,19 +69,13 @@ window.onload = function () {
                 'fill-color': [
                     'interpolate',
                     ['linear'],
-                    ['get', 'senticent_polarity'],
-                    -0.03899,
-                    '#d9ed92',
-                    0.07205,
-                    '#b5e48c',
-                    0.11972,
-                    '#99d98c',
-                    0.14414,
-                    '#52b69a',
-                    0.17022,
-                    '#34a0a4',
-                    0.63468,
-                    '#168aad'
+                    ['get', 'group'],
+                    1,
+                    '#b92727',
+                    2,
+                    '#5E107D',
+                    3,
+                    '#1a8812'
                 ],
 
                 'fill-opacity': 0.75
@@ -96,7 +85,7 @@ window.onload = function () {
 
         map.addSource('wb', {
             'type': 'geojson',
-            'data': 'data/wb.geojson'
+            'data': 'data/wb_cat_class.geojson'
         });
 
         map.addLayer({
@@ -109,19 +98,13 @@ window.onload = function () {
                 'fill-color': [
                     'interpolate',
                     ['linear'],
-                    ['get', 'senticent_polarity'],
-                    -1.794540,
-                    '#d9ed92',
-                    0.008247,
-                    '#b5e48c',
-                    0.091171,
-                    '#52b69a',
-                    0.100054,
-                    '#99d98c',
-                    0.195504,
-                    '#34a0a4',
-                    0.855051,
-                    '#168aad'
+                    ['get', 'group'],
+                    1,
+                    '#b92727',
+                    2,
+                    '#5E107D',
+                    3,
+                    '#1a8812'
                 ],
                 'fill-opacity': 0.75
             }
@@ -155,7 +138,7 @@ window.onload = function () {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Management catchment: ' + e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
+            .setHTML('<p> Management catchment: ' + e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senticent_polarity).toFixed(4))
             .addTo(map);
     });
 
@@ -163,7 +146,7 @@ window.onload = function () {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Operational catchment: ' + e.features[0].properties.OC + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity)
+            .setHTML('<p> Operational catchment: ' + e.features[0].properties.OC + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senticent_polarity).toFixed(4))
             .addTo(map);
     });
 
@@ -171,7 +154,7 @@ window.onload = function () {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + e.features[0].properties.senticent_polarity + "</br> <p> Waterbody ecological status: " + e.features[0].properties.status)
+            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senticent_polarity).toFixed(4) + "</br> <p> Waterbody ecological status: " + e.features[0].properties.status)
             .addTo(map);
     });
 
