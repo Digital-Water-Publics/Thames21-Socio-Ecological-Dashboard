@@ -12,6 +12,33 @@ window.onload = function () {
 
     // Load map
     map.on('load', () => {
+        // map.addSource('rbd', {
+        //     'type': 'geojson',
+        //     'data': 'data/rbd_cat.geojson'
+        // });
+
+        // map.addLayer({
+        //     'id': 'rbd_value',
+        //     'source': 'rbd',
+        //     'maxzoom': 1,
+        //     'minzoom': 5,
+        //     'type': 'fill',
+        //     'paint': {
+        //         'fill-color': [
+        //             'interpolate',
+        //             ['linear'],
+        //             ['get', 'group'],
+        //             1,
+        //             '#b92727',
+        //             2,
+        //             '#f2ee0f',
+        //             3,
+        //             '#1a8812'
+        //         ],
+        //         'fill-opacity': 0.75
+        //     }
+        // }, );
+
         map.addSource('mc', {
             'type': 'geojson',
             'data': 'data/mc_cat.geojson'
