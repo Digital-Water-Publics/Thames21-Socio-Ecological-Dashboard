@@ -31,7 +31,7 @@ window.onload = function () {
                     1,
                     '#b92727',
                     2,
-                    '#5E107D',
+                    '#f2ee0f',
                     3,
                     '#1a8812'
                 ],
@@ -73,7 +73,7 @@ window.onload = function () {
                     1,
                     '#b92727',
                     2,
-                    '#5E107D',
+                    '#f2ee0f',
                     3,
                     '#1a8812'
                 ],
@@ -102,7 +102,7 @@ window.onload = function () {
                     1,
                     '#b92727',
                     2,
-                    '#5E107D',
+                    '#f2ee0f',
                     3,
                     '#1a8812'
                 ],
@@ -135,11 +135,31 @@ window.onload = function () {
 
 
     map.on('click', 'mc_value', (e) => {
-        // Copy coordinates array.
+
+        var group = e.features[0].properties.group 
+
+        if(group == 1){
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Management catchment: ' + e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senticent_polarity).toFixed(4))
-            .addTo(map);
+            .setHTML('<div id="bg" style="height:100%;width:100%;background-color:#b92727;"> <p> Management catchment: ' + e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senticent_polarity).toFixed(4)) 
+            .addTo(map);    
+        }
+        
+        
+        if(group == 2){
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<div id="bg" style="height:100%;width:100%;background-color:#f2ee0f;"> <p> Management catchment: ' + e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senticent_polarity).toFixed(4)) 
+                .addTo(map);    
+            }
+
+            
+        if(group == 3){
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<div id="bg" style="height:100%;width:100%;background-color:#1a8812;"> <p> Management catchment: ' + e.features[0].properties.MC + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senticent_polarity).toFixed(4)) 
+                .addTo(map);    
+            }
     });
 
     map.on('click', 'oc', (e) => {
