@@ -63,12 +63,24 @@
         <div><span style="background-color: #f2ee0f"></span>Neutral Sentiment Engagement</div>
         <div><span style="background-color: #1a8812"></span>Positive Sentiment Engagement</div>
 
-        <p style="width: 100%;">The <b>Sentiment Polarity Category</b> classifies how positively or negatively people talk of tweets about rivers on Twitter. Each tweet is 
-            assigned a score, which can have a between -5 (extremely negative) and 5 (extremely
-            positive) but will usually fall somewhere in between. 
+        <p style="width: 100%;">
+            The <b>Sentiment Polarity Category</b> tells us how people feel when they mention a river in their 
+            tweets. Sentiment polarity means whether the feelings they express in the language of their 
+            tweets are positive or negative (or neutral). 
         </br></br>
-            Tweets are aggreagtaed at each geographical scale (River Basin District, Management Catchment, Operational Catchment and Waterbody) and classified into three categories; tweets with a polarity score in the lower third ("Negative Sentiment Engagement") is a score between -3.336 to -.0.59 and are coloured red; tweets with a polarity score in the middle third ("Neutral Sentiment Engagement") is a score between -0.059 and 0.303 and are coloured yellow; tweets with a polarity score in the upper third ("Positive Sentiment Engagement") is a score between 0.303 and 7.857 and are coloured green. Each category has roughly the same number of tweets
-            sentiment is coloured green.</p>
+           <i> How does the Sentiment Polarity Category algorithm work?</i>
+        </br></br>
+            First, we assign each tweet a score between 10 for extremely positive and -10 for extremely 
+            negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at 
+            four geographical scales, namely river basin district, management catchment, operational 
+            catchment, and water body. At each scale, we then sort tweets classified into three categories:
+            Negative Sentiment Engagement, which comprises tweets with a polarity score in the lower 
+            third (between -3.336 and -0.59) and is coloured red on the map; Neutral Sentiment 
+            Engagement, which comprises tweets with a polarity score in the middle third (between -
+            0.059 and 0.303) and is coloured yellow; and Positive Sentiment Engagement, which 
+            comprises tweets with a polarity score in the upper third (between 0.303 and 7.857) and is 
+            coloured green. Each category contains roughly the same number of tweets.
+        </p>
 
     </div>
 
