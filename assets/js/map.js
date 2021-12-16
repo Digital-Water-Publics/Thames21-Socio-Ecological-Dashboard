@@ -112,7 +112,7 @@ window.onload = function () {
 
         map.addSource('wb', {
             'type': 'geojson',
-            'data': 'data/wb_cat_class.geojson'
+            'data': 'data/wb_lines.geojson'
         });
 
         map.addLayer({
