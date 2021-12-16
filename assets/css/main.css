@@ -177,7 +177,7 @@ section {
 
 .geocoder {
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     width: 50%;
     left: 50%;
     margin-left: -25%;
@@ -191,6 +191,13 @@ section {
 .mapboxgl-popup-content {
     background-color: #00131c !important;
     color: white !important;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions > .active > a, .mapboxgl-ctrl-geocoder .suggestions > li > a:hover{
+    background-color: #001620 !important;
+}
+.mapboxgl-ctrl-geocoder .suggestions{
+    background-color: #001620 !important;
 }
 
 #map {
