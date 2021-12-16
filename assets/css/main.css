@@ -76,6 +76,7 @@ section {
 
 #scale {
     text-align: center;
+    margin-bottom: -1em;
 }
 
 .row::after {
@@ -193,7 +194,7 @@ section {
 }
 
 #map {
-    margin-top: 150px;
+    margin-top: 160px;
 }
 
 .legend {
