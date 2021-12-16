@@ -3,7 +3,7 @@ window.onload = function () {
         'pk.eyJ1IjoibmF0aGFuYWVsaXNhbWFwcGVyIiwiYSI6ImNrODNiZzdoZTA4Y2gzZ281YmJiMHNwOWIifQ.d2ntY86sJ7DR7011dUJ2cw';
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/nathanaelisamapper/cku35o63u0ccs18mno2qb0wel',
+        style: 'mapbox://styles/nathanaelisamapper/ckvhcne9p77dh15o8ysaxyiif',
         center: [-0.118092, 51.509865],
         minZoom: 3,
         bearing: 15,
@@ -112,7 +112,7 @@ window.onload = function () {
 
         map.addSource('wb', {
             'type': 'geojson',
-            'data': 'data/wb_lines.geojson'
+            'data': 'data/lines.geojson'
         });
 
         map.addLayer({
@@ -120,9 +120,10 @@ window.onload = function () {
             'source': 'wb',
             'maxzoom': 14,
             'minzoom': 11,
-            'type': 'fill',
+            'type': 'line',
             'paint': {
-                'fill-color': [
+                'line-width': 5,
+                'line-color': [
                     'interpolate',
                     ['linear'],
                     ['get', 'group'],
@@ -132,8 +133,7 @@ window.onload = function () {
                     '#f2ee0f',
                     3,
                     '#1a8812'
-                ],
-                'fill-opacity': 0.75
+                ]
             }
         }, );
     });
