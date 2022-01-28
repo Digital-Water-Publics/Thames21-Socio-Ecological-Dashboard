@@ -192,6 +192,12 @@ section {
     background-color: #00131c !important;
     color: white !important;
 }
+.x.axis line {
+    stroke: white !important;
+}
+.y.axis line {
+    stroke: white !important;
+}
 
 .mapboxgl-ctrl-geocoder .suggestions > .active > a, .mapboxgl-ctrl-geocoder .suggestions > li > a:hover{
     background-color: #001620 !important;
