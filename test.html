@@ -10,7 +10,7 @@
 </head>
 <h1>Chertsey Bourne (Chertsey to River Thames confluence)</h1>
 <h2>Ecological Status: <b style="background-color: red;border-radius: 500px;">Poor</b></h2>
-<svg id ="svg1" width="440" height="300"></svg>
+
 <h3>Operational Catchment: Wey</h3>
 <h3>Managment Catchment: Wey</h3>
 <!-- Create a div where the graph will take place -->
@@ -18,23 +18,46 @@
 <div id="my_dataviz">
     <h3>Historical Emotional Index</h3>
 </div>
-<div id="my_dataviz1">
-    <h3>Emotion Prevelance Distribution</h3>
-</div>
+<div class="row">
+    <div class="column">
+        <div id="my_dataviz1">
+            <h3>Emotion Prevelance Distribution</h3>
+        </div>
+    </div>
+    <div class="column">
+        <div id="my_dataviz4">
+            <h3>Emotion Prevelance </h3>
+        </div>
+    </div>
+  </div>
+
+>
 
 
 <body>
     <style>
-   path {
-      fill: #ccc;
-      stroke: #fff;
-      stroke-linejoin: round;
-    }
+        path {
+            stroke: #fff;
+
+        }
+        .row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+svg {
+    display: block;
+    margin: 0 auto;
+}
     </style>
 
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
 
 
@@ -100,7 +123,7 @@
                 svg.append("path")
                     .datum(data)
                     .attr("fill", "none")
-                    .attr("stroke", "steelblue")
+                    .attr("stroke", "white")
                     .attr("stroke-width", 1.5)
                     .attr("d", d3.line()
                         .x(function (d) {
@@ -118,12 +141,12 @@
     <script>
         // set the dimensions and margins of the graph
         var margin1 = {
-                top: 50,
-                right: 00,
-                bottom: 00,
-                left: 250
+            top: 20,
+      right: 20,
+      bottom: 20,
+      left: 145
             },
-            width1 = 600 - margin.left - margin.right,
+            width1 = 500 - margin.left - margin.right,
             height2 = 400 - margin.top - margin.bottom;
 
         // append the svg object to the body of the page
@@ -140,12 +163,12 @@
 
             // Add X axis
             var x = d3.scaleLinear()
-                .domain([0, 100])
+                .domain([0, 50])
                 .range([0, width]);
             svg1.append("g")
                 .attr("transform", "translate(0," + height + ")")
                 .style("stroke", "white")
-                .style("font-size", "24px")
+                .style("font-size", "16px")
                 .call(d3.axisBottom(x))
                 .selectAll("text")
                 .attr("transform", "translate(-10,0)rotate(-45)")
@@ -160,7 +183,7 @@
                 .padding(.1);
             svg1.append("g")
                 .style("stroke", "white")
-                .style("font-size", "24px")
+                .style("font-size", "16px")
                 .call(d3.axisLeft(y))
 
             //Bars
@@ -176,7 +199,7 @@
                     return x(d.percent);
                 })
                 .attr("height", y.bandwidth())
-                .attr("fill", "#69b3a2")
+                .attr("fill", "white")
 
 
             // .attr("x", function(d) { return x(d.Country); })
@@ -186,6 +209,65 @@
             // .attr("fill", "#69b3a2")
 
         })
+    </script>
+
+    <script>
+        // set the dimensions and margins of the graph
+        var margin5 = {
+            top: 20,
+      right: 45,
+      bottom: 20,
+      left: 20
+            },
+            width3 = 500 - margin.left - margin.right,
+            height3 = 400 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        var svg4 = d3.select("#my_dataviz4").append("svg")
+            .attr("width", width3 + margin5.left + margin5.right)
+            .attr("height", height3 + margin5.top + margin5.bottom)
+            .append("g");
+
+        d3.csv("https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/np.csv", function (data) {
+
+
+                // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+                // Wordcloud features that are different from one word to the other must be here
+                var layout = d3.layout.cloud()
+                    .size([width3, height3])
+                    .words(data.map(function (d) {
+                        return {
+                            text: d.text
+                        };
+                    }))
+                    .padding(5) //space between words
+                    .rotate(-45) // rotation angle in degrees
+                    .fontSize(20) // font size of words
+                    .on("end", draw);
+                layout.start();
+
+                // This function takes the output of 'layout' above and draw the words
+                // Wordcloud features that are THE SAME from one word to the other can be here
+                function draw(words) {
+                    svg4
+                        .append("g")
+                        .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+                        .selectAll("text")
+                        .data(words)
+                        .enter().append("text")
+                        .style("font-size", 20)
+                        .style("fill", "white")
+                        .attr("text-anchor", "middle")
+                        .style("font-family", "Impact")
+                        .attr("transform", function (d) {
+                            return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                        })
+                        .text(function (d) {
+                            return d.text;
+                        })
+                };
+            
+        });
     </script>
 
 </body>

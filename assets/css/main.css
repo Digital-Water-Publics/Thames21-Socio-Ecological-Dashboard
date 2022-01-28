@@ -2,7 +2,7 @@ body {
     margin: 10px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color: white;
-    background: #00131c;
+    background: #002147;
     box-shadow: 20px 20px 60px #001018,
         -20px -20px 60px #001620;
     border-radius: 50px;
@@ -189,7 +189,7 @@ section {
 }
 
 .mapboxgl-popup-content {
-    background-color: #00131c !important;
+    background-color: #002147 !important;
     color: white !important;
 }
 .x.axis line {
@@ -221,7 +221,7 @@ section {
     padding: 10px;
     position: absolute;
     left: 10px;
-    color: #00131c;
+    color: #002147;
     z-index: 1;
 }
 
@@ -252,7 +252,7 @@ section {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 180px;
-    background-color: #00131c;
+    background-color: #002147;
     color: #fff;
     text-align: left;
     border-radius: 6px;
