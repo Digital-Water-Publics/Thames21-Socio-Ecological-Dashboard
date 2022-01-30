@@ -6,27 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<h1>Chertsey Bourne (Chertsey to River Thames confluence)</h1>
-<h2>Ecological Status: <b style="background-color: red;border-radius: 500px;">Poor</b></h2>
+<h1>Chertsey Bourne (Chertsey to River Thames confluence) <b style="background-color: red;border-radius: 500px;font-size:small;">Poor Ecological Status</b></h1>
 
-<h3>Operational Catchment: Wey</h3>
-<h3>Managment Catchment: Wey</h3>
+<div id="map"></div>
+<h3>Number of Sewage Incidents in the Operational Catchment: 165</h3>
+<h3>Hours of Sewage Pollution in the Operational Catchment: 2,992</h3>
+
 <!-- Create a div where the graph will take place -->
-<h2 style="text-align: center;">Emotional Index</h2>
+<h2 style="text-align: center;">Emotional AI Data</h2>
 <div id="my_dataviz">
-    <h3>Historical Emotional Index</h3>
+    <h3>Weekly Mean Saliency of Tweets on Twitter</h3>
+    <p style="width: 25%;">  Each tweet includes a score between 5 for extremely positive and -5 for extremely 
+        negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at 
+        four geographical scales, namely river basin district, management catchment, operational 
+        catchment, and water body. </p>
+    <a href="#">View Raw Data</a>
 </div>
 <div class="row">
     <div class="column">
         <div id="my_dataviz1">
-            <h3>Emotion Prevelance Distribution</h3>
+            <h3>Emotions detected in tweets (% of total tweets)</h3>
+            <p>Emotions are defined though NRC Emotional Lexiocon</p>
+            <a href="#">View Raw Data</a>
         </div>
     </div>
     <div class="column">
         <div id="my_dataviz4">
-            <h3>Emotion Prevelance </h3>
+            <h3>Common phrases associated with the water body </h3>
+            <a href="#">View Raw Data</a>
         </div>
     </div>
   </div>
@@ -36,6 +44,9 @@
 
 <body>
     <style>
+        body{
+            background-color: #002147;
+        }
         path {
             stroke: #fff;
 
@@ -43,7 +54,8 @@
         .row {
   display: flex;
 }
-
+body { margin: 0; padding: 0; }
+#map { height: 40vh; width: 100%; }
 .column {
   flex: 50%;
 }
@@ -57,10 +69,51 @@ svg {
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
     <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
-
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
 
+<script>
+    	mapboxgl.accessToken = 'pk.eyJ1IjoibmF0aGFuYWVsaXNhbWFwcGVyIiwiYSI6ImNrODNiZzdoZTA4Y2gzZ281YmJiMHNwOWIifQ.d2ntY86sJ7DR7011dUJ2cw';
+const map = new mapboxgl.Map({
+container: 'map', // container ID
+style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+center: [	-0.076132, 	51.508530], // starting position [lng, lat]
+zoom: 13// starting zoom
+});
 
+map.on('load', () => {
+map.addSource('wb', {
+            'type': 'geojson',
+            'data': 'data/lines.geojson'
+        });
+
+        map.addLayer({
+            'id': 'wb_value',
+            'source': 'wb',
+            'maxzoom': 20,
+            'minzoom': 2,
+            'type': 'line',
+            'paint': {
+                'line-width': 5,
+                'line-color': [
+                    'interpolate',
+                    ['linear'],
+                    ['get', 'group'],
+                    1,
+                    '#b92727',
+                    2,
+                    '#f2ee0f',
+                    3,
+                    '#1a8812'
+                ]
+            }
+        });
+
+    })
+
+
+</script>
 
     <script>
         // set the dimensions and margins of the graph
@@ -94,6 +147,7 @@ svg {
             },
 
             // Now I can use this dataset:
+            // Now I can use this dataset:
             function (data) {
 
                 // Add X axis --> it is a date format
@@ -102,9 +156,10 @@ svg {
                         return d.date;
                     }))
                     .range([0, width]);
-                svg.append("g")
-                    .style("stroke", "white")
-                    .style("font-size", "24px")
+                xAxis = svg.append("g")
+                .style("stroke", "white")
+                .style("font-size", "16px")
+                .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                     .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(x));
 
@@ -112,18 +167,42 @@ svg {
                 var y = d3.scaleLinear()
                     .domain([-5, d3.max(data, function (d) {
                         return +d.value;
-                    }) + 2])
+                    })])
                     .range([height, 0]);
-                svg.append("g")
-                    .style("stroke", "white")
-                    .style("font-size", "24px")
+                yAxis = svg.append("g")
+                .style("stroke", "white")
+                .style("font-family", "'M PLUS Rounded 1c', sans-serif")
+                .style("font-size", "16px")
                     .call(d3.axisLeft(y));
 
+                // Add a clipPath: everything out of this area won't be drawn.
+                var clip = svg.append("defs").append("svg:clipPath")
+                    .attr("id", "clip")
+                    .append("svg:rect")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .attr("x", 0)
+                    .attr("y", 0);
+
+                // Add brushing
+                var brush = d3.brushX() // Add the brush feature using the d3.brush function
+                    .extent([
+                        [0, 0],
+                        [width, height]
+                    ]) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+                    .on("end",
+                    updateChart) // Each time the brush selection changes, trigger the 'updateChart' function
+
+                // Create the line variable: where both the line and the brush take place
+                var line = svg.append('g')
+                    .attr("clip-path", "url(#clip)")
+
                 // Add the line
-                svg.append("path")
+                line.append("path")
                     .datum(data)
+                    .attr("class", "line") // I add the class line to be able to modify this line later on.
                     .attr("fill", "none")
-                    .attr("stroke", "white")
+                    .attr("stroke", "steelblue")
                     .attr("stroke-width", 1.5)
                     .attr("d", d3.line()
                         .x(function (d) {
@@ -134,6 +213,71 @@ svg {
                         })
                     )
 
+                // Add the brushing
+                line
+                    .append("g")
+                    .attr("class", "brush")
+                    .call(brush);
+
+                // A function that set idleTimeOut to null
+                var idleTimeout
+
+                function idled() {
+                    idleTimeout = null;
+                }
+
+                // A function that update the chart for given boundaries
+                function updateChart() {
+
+                    // What are the selected boundaries?
+                    extent = d3.event.selection
+
+                    // If no selection, back to initial coordinate. Otherwise, update X axis domain
+                    if (!extent) {
+                        if (!idleTimeout) return idleTimeout = setTimeout(idled,
+                        350); // This allows to wait a little bit
+                        x.domain([4, 8])
+                    } else {
+                        x.domain([x.invert(extent[0]), x.invert(extent[1])])
+                        line.select(".brush").call(brush.move,
+                            null) // This remove the grey brush area as soon as the selection has been done
+                    }
+
+                    // Update axis and line position
+                    xAxis.transition().duration(1000).call(d3.axisBottom(x))
+                    line
+                        .select('.line')
+                        .transition()
+                        .duration(1000)
+                        .attr("d", d3.line()
+                            .x(function (d) {
+                                return x(d.date)
+                            })
+                            .y(function (d) {
+                                return y(d.value)
+                            })
+                        )
+                }
+
+                // If user double click, reinitialize the chart
+                svg.on("dblclick", function () {
+                    x.domain(d3.extent(data, function (d) {
+                        return d.date;
+                    }))
+                    xAxis.transition().call(d3.axisBottom(x))
+                    line
+                        .select('.line')
+                        .transition()
+                        .attr("d", d3.line()
+                            .x(function (d) {
+                                return x(d.date)
+                            })
+                            .y(function (d) {
+                                return y(d.value)
+                            })
+                        )
+                });
+
             })
     </script>
 
@@ -143,10 +287,10 @@ svg {
         var margin1 = {
             top: 20,
       right: 20,
-      bottom: 20,
-      left: 145
+      bottom: 40,
+      left: 185
             },
-            width1 = 500 - margin.left - margin.right,
+            width1 = 550 - margin.left - margin.right,
             height2 = 400 - margin.top - margin.bottom;
 
         // append the svg object to the body of the page
@@ -168,6 +312,7 @@ svg {
             svg1.append("g")
                 .attr("transform", "translate(0," + height + ")")
                 .style("stroke", "white")
+                .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                 .style("font-size", "16px")
                 .call(d3.axisBottom(x))
                 .selectAll("text")
@@ -184,6 +329,7 @@ svg {
             svg1.append("g")
                 .style("stroke", "white")
                 .style("font-size", "16px")
+                .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                 .call(d3.axisLeft(y))
 
             //Bars
@@ -200,13 +346,6 @@ svg {
                 })
                 .attr("height", y.bandwidth())
                 .attr("fill", "white")
-
-
-            // .attr("x", function(d) { return x(d.Country); })
-            // .attr("y", function(d) { return y(d.Value); })
-            // .attr("width", x.bandwidth())
-            // .attr("height", function(d) { return height - y(d.Value); })
-            // .attr("fill", "#69b3a2")
 
         })
     </script>
@@ -241,8 +380,8 @@ svg {
                         };
                     }))
                     .padding(5) //space between words
-                    .rotate(-45) // rotation angle in degrees
-                    .fontSize(20) // font size of words
+                    .rotate(0) // rotation angle in degrees
+                    .fontSize(32) // font size of words
                     .on("end", draw);
                 layout.start();
 
@@ -255,10 +394,10 @@ svg {
                         .selectAll("text")
                         .data(words)
                         .enter().append("text")
-                        .style("font-size", 20)
+                        .style("font-size", "2em")
                         .style("fill", "white")
                         .attr("text-anchor", "middle")
-                        .style("font-family", "Impact")
+                        .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                         .attr("transform", function (d) {
                             return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
                         })

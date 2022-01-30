@@ -3,8 +3,6 @@ body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color: white;
     background: #002147;
-    box-shadow: 20px 20px 60px #001018,
-        -20px -20px 60px #001620;
     border-radius: 50px;
 }
 
@@ -66,13 +64,9 @@ section {
     width: 0%;
     margin-top: 2vw;
     padding: 5px;
-    margin-left: 15vw;
 }
 
-.column:hover {
-    opacity: 0.8;
-    scale: 0.8;
-}
+
 
 #scale {
     text-align: center;

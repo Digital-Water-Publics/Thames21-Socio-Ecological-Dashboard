@@ -3,7 +3,7 @@ window.onload = function () {
         'pk.eyJ1IjoibmF0aGFuYWVsaXNhbWFwcGVyIiwiYSI6ImNrODNiZzdoZTA4Y2gzZ281YmJiMHNwOWIifQ.d2ntY86sJ7DR7011dUJ2cw';
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/nathanaelisamapper/ckvhcne9p77dh15o8ysaxyiif',
+        style: 'mapbox://styles/mapbox/satellite-v9', // style URL
         center: [-0.118092, 51.509865],
         minZoom: 3,
         bearing: 15,
@@ -118,8 +118,8 @@ window.onload = function () {
         map.addLayer({
             'id': 'wb_value',
             'source': 'wb',
-            'maxzoom': 14,
-            'minzoom': 11,
+            'maxzoom': 2,
+            'minzoom': 20,
             'type': 'line',
             'paint': {
                 'line-width': 5,
@@ -135,7 +135,7 @@ window.onload = function () {
                     '#1a8812'
                 ]
             }
-        }, );
+        });
     });
 
     function forwardGeocoder(query) {
