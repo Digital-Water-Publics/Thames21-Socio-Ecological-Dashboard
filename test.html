@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<body>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +8,26 @@
     <title>Document</title>
 </head>
 <h1>Chertsey Bourne (Chertsey to River Thames confluence) <b style="background-color: red;border-radius: 500px;font-size:small;">Poor Ecological Status</b></h1>
+<div class="row">
+    <div class="column">
+        <div id="map"></div>        
+    </div>
+    <div class="column" style="background-color:darkgray;">
 
-<div id="map"></div>
+        <div id="vis"></div>
 <h3>Number of Sewage Incidents in the Operational Catchment: 165</h3>
 <h3>Hours of Sewage Pollution in the Operational Catchment: 2,992</h3>
+  
+    </div>
 
+</div>
 <!-- Create a div where the graph will take place -->
 <h2 style="text-align: center;">Emotional AI Data</h2>
 <div id="my_dataviz">
+</div>
+<div>
     <h3>Weekly Mean Saliency of Tweets on Twitter</h3>
-    <p style="width: 25%;">  Each tweet includes a score between 5 for extremely positive and -5 for extremely 
+    <p style="width: 100%;">  Each tweet includes a score between 5 for extremely positive and -5 for extremely 
         negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at 
         four geographical scales, namely river basin district, management catchment, operational 
         catchment, and water body. </p>
@@ -38,24 +48,33 @@
         </div>
     </div>
   </div>
+</div>
 
->
 
-
-<body>
     <style>
         body{
             background-color: #002147;
+            color: white;
         }
         path {
             stroke: #fff;
 
         }
+        table {
+                border-collapse: collapse;
+                border: 2px black solid;
+                font: 12px sans-serif;
+            }
+
+            td {
+                border: 1px black solid;
+                padding: 5px;
+            }
         .row {
   display: flex;
 }
 body { margin: 0; padding: 0; }
-#map { height: 40vh; width: 100%; }
+#map { height: 60vh; width: 100%; }
 .column {
   flex: 50%;
 }
@@ -77,9 +96,10 @@ svg {
     	mapboxgl.accessToken = 'pk.eyJ1IjoibmF0aGFuYWVsaXNhbWFwcGVyIiwiYSI6ImNrODNiZzdoZTA4Y2gzZ281YmJiMHNwOWIifQ.d2ntY86sJ7DR7011dUJ2cw';
 const map = new mapboxgl.Map({
 container: 'map', // container ID
-style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+style: 'mapbox://styles/nathanaelisamapper/ckz1x0r54001514tbrxvqosch', // style URL
 center: [	-0.076132, 	51.508530], // starting position [lng, lat]
-zoom: 13// starting zoom
+zoom: 13, // starting zoom,
+pitch: 75
 });
 
 map.on('load', () => {
@@ -408,6 +428,27 @@ map.addSource('wb', {
             
         });
     </script>
+<!-- 
+    <script>
+            
+
+
+    d3.text("https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/se.csv", function(data) {
+                var parsedCSV = d3.csv(data);
+
+                var container = d3.select("#vis")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(data).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+    </script> -->
 
 </body>
 
