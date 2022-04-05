@@ -179,6 +179,15 @@ window.onload = function () {
     });
 
     map.on('click', 'wb_value', (e) => {
+        var WBID = e.feature[0].properties.WBID;
+
+        var eco = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
+        var senti = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
+        var rnag = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
+        var emo = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
+        var noun = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
+        chart(senit,eco,rnag,emo,noun)
+
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)

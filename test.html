@@ -155,13 +155,13 @@ map.addSource('wb', {
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
 
-        //Read the data
-        d3.csv("https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/p.csv",
+        //Read the data for graph
+        d3.csv("https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/GB106037028080/polarity-score.csv",
 
             // When reading the csv, I must format variables:
             function (d) {
                 return {
-                    date: d3.timeParse("%Y-%m-%d %H:%M:%S")(d.created_at),
+                    date: d3.timeParse("%Y-%m-%d")(d.created_at),
                     value: d.mean_senti
                 }
             },
@@ -323,7 +323,7 @@ map.addSource('wb', {
                 "translate(" + margin1.left + "," + margin1.top + ")");
 
         // Parse the Data
-        d3.csv("https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/s.csv", function (data) {
+        d3.csv("https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/GB106037028080/emolex-frequency.csv", function (data) {
 
             // Add X axis
             var x = d3.scaleLinear()
@@ -387,7 +387,7 @@ map.addSource('wb', {
             .attr("height", height3 + margin5.top + margin5.bottom)
             .append("g");
 
-        d3.csv("https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/np.csv", function (data) {
+        d3.csv("https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/GB106037028080/common-nounphrase.csv", function (data) {
 
 
                 // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
