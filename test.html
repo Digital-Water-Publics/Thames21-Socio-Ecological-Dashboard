@@ -21,34 +21,7 @@
     </div>
 
 </div>
-<!-- Create a div where the graph will take place -->
-<h2 style="text-align: center;">Emotional AI Data</h2>
-<div id="my_dataviz">
-</div>
-<div>
-    <h3>Weekly Mean Saliency of Tweets on Twitter</h3>
-    <p style="width: 100%;">  Each tweet includes a score between 5 for extremely positive and -5 for extremely 
-        negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at 
-        four geographical scales, namely river basin district, management catchment, operational 
-        catchment, and water body. </p>
-    <a href="#">View Raw Data</a>
-</div>
-<div class="row">
-    <div class="column">
-        <div id="my_dataviz1">
-            <h3>Emotions detected in tweets (% of total tweets)</h3>
-            <p>Emotions are defined though NRC Emotional Lexiocon</p>
-            <a href="#">View Raw Data</a>
-        </div>
-    </div>
-    <div class="column">
-        <div id="my_dataviz4">
-            <h3>Common phrases associated with the water body </h3>
-            <a href="#">View Raw Data</a>
-        </div>
-    </div>
-  </div>
-</div>
+
 
 
     <style>
@@ -85,12 +58,7 @@ svg {
     </style>
 
     <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
-    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
+
 
 <script>
     	mapboxgl.accessToken = 'pk.eyJ1IjoibmF0aGFuYWVsaXNhbWFwcGVyIiwiYSI6ImNrODNiZzdoZTA4Y2gzZ281YmJiMHNwOWIifQ.d2ntY86sJ7DR7011dUJ2cw';

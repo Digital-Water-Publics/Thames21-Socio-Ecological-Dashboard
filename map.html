@@ -10,12 +10,19 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js">
     </script>
     <link rel="stylesheet"
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
         type="text/css">
     <script type="text/javascript" src="assets/js/search_centroids.js"></script>
+    <script type="text/javascript" src="assets/js/chart.js"></script>
     <script type="text/javascript" src="assets/js/map.js"></script>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="icon" type="image/png" href="favcon.png" />
@@ -37,7 +44,7 @@
     <a href="index.html" class="button button4">Exit Map</a>
     <h2 id="scale"> You are viewing at the Management Catchment scale </h2>
 
-    <div id="wb-legend" class="legend">
+    <!-- <div id="wb-legend" class="legend">
         <h4>Sentiment Polarity Score</h4>
     </div>
 
@@ -120,7 +127,23 @@
             comprises tweets with a polarity score in the upper third (between 0.303 and 7.857) and is 
             coloured green. Each category contains roughly the same number of tweets.
         </p>
+    </div> -->
+<!-- Create a div where the graph will take place -->
+<h2 style="text-align: center;">Emotional AI Data</h2>
+
+</div>
+<div style="margin-top: 28em;">
+    <div>
+        <h3>Weekly Mean Saliency of Tweets on Twitter</h3>
+        <p style="width: 100%;">  Each tweet includes a score between 5 for extremely positive and -5 for extremely 
+            negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at 
+            four geographical scales, namely river basin district, management catchment, operational 
+            catchment, and water body. </p>
+        <a href="#">View Raw Data</a>
     </div>
+    <div id="my_dataviz"></div>
+</div>
+
 
 </body>
 

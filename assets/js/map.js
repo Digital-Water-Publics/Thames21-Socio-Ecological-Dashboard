@@ -118,7 +118,7 @@ window.onload = function () {
         map.addLayer({
             'id': 'wb_value',
             'source': 'wb',
-            'maxzoom': 2,
+            'maxzoom': 5,
             'minzoom': 20,
             'type': 'line',
             'paint': {
@@ -144,21 +144,22 @@ window.onload = function () {
             // Handle queries with different capitalization
             // than the source data by calling toLowerCase().
             if (
-                feature.properties.name
+                feature.properties.Name
                 .toLowerCase()
                 .includes(query.toLowerCase())
             ) {
                 // Add a tree emoji as a prefix for custom
                 // data results using carmen geojson format:
                 // https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
-                feature['place_name'] = `🌊  ${feature.properties.name}`;
+                feature['place_name'] = `🌊  ${feature.properties.Name}`;
                 feature['center'] = feature.geometry.coordinates;
-                feature['place_type'] = ['park'];
+              
                 matchingFeatures.push(feature);
             }
         }
         return matchingFeatures;
     }
+
 
 
     map.on('click', 'mc_value', (e) => {
@@ -179,14 +180,6 @@ window.onload = function () {
     });
 
     map.on('click', 'wb_value', (e) => {
-        var WBID = e.feature[0].properties.WBID;
-
-        var eco = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
-        var senti = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
-        var rnag = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
-        var emo = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
-        var noun = "https://raw.githubusercontent.com/Digital-Water-Publics/pot-mi/main/pot-mi/" + WBID + "/eco.csv" 
-        chart(senit,eco,rnag,emo,noun)
 
         // Copy coordinates array.
         new mapboxgl.Popup()
@@ -232,6 +225,25 @@ window.onload = function () {
     const mcLegendEl = document.getElementById('mc-legend');
     const riverLegendEl = document.getElementById('wb-legend');
 
+    
+    geocoder.on('result', (e) => {
+        d3.selectAll("#my_dataviz > *").remove();
+        let WBID_Select = e.result.properties.WBID;
+
+        var eco = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/eco-class.csv" 
+        var senti = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/emolex-frequency.csv" 
+        var rnag = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/rnag.csv" 
+         var noun = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/common-nounphrase.csv" 
+
+         var polarity = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/polarity-score.csv" 
+
+         chart(polarity)
+
+        });
+
+        geocoder.on('clear', () => {
+            results.innerText = '';
+            });
 
     map.on('zoom', () => {
 
