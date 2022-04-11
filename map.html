@@ -29,20 +29,19 @@
 </head>
 
 <body>
-    <style>
 
-    </style>
-    <div id="map">
-    </div>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+    <div id="map"></div>
+
+    <div id = "top" style="height: 100%;width: 100%;">
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
         style="visibility: visible;width: 73px;height:20px;float: right !important;margin-top: 50px !important;"
         data-show-count="false">Tweet how your river makes you feel</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-    <div id="geocoder" class="geocoder">
-    </div>
+    <div id="geocoder" class="geocoder"></div>
     <a href="index.html" class="button button4">Exit Map</a>
-    <h2 id="scale"> You are viewing at the Management Catchment scale </h2>
+    <h2 id="scale"> Search for a River </h2>    
+    </div>
+    <div id="csv"></div>
 
     <!-- <div id="wb-legend" class="legend">
         <h4>Sentiment Polarity Score</h4>
@@ -129,10 +128,11 @@
         </p>
     </div> -->
 <!-- Create a div where the graph will take place -->
-<h2 style="text-align: center;">Emotional AI Data</h2>
 
-</div>
+
 <div style="margin-top: 28em;">
+    <h2 style="text-align: center;">Emotional AI Data</h2>
+
     <div>
         <h3>Weekly Mean Saliency of Tweets on Twitter</h3>
         <p style="width: 100%;">  Each tweet includes a score between 5 for extremely positive and -5 for extremely 
@@ -141,7 +141,18 @@
             catchment, and water body. </p>
         <a href="#">View Raw Data</a>
     </div>
-    <div id="my_dataviz"></div>
+    <div id="my_dataviz" style="  margin-left: auto;
+    margin-right: auto;width:60%"></div>
+
+<h3>Emotions detected in tweets (% of total tweets)</h3>
+<p>Emotions are defined though NRC Emotional Lexiocon</p>
+<a href="#">View Raw Data</a>
+<div id="my_dataviz1" style="  margin-left: auto;
+margin-right: auto;width:50%"></div>
+    <h3>Common phrases associated with the water body </h3>
+    <a href="#">View Raw Data</a>
+<div id="my_dataviz4" style="  margin-left: auto;
+margin-right: auto;width:50%"></div>
 </div>
 
 
