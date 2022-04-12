@@ -171,6 +171,7 @@ section {
     height: 400px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 8vw;
 
     
 }
@@ -218,10 +219,6 @@ td {
 }
 .mapboxgl-ctrl-geocoder .suggestions{
     background-color: #001620 !important;
-}
-
-#map {
-    margin-top: 240px;
 }
 
 .legend {
