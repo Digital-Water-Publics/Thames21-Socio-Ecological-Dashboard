@@ -1,5 +1,4 @@
 body {
-    margin: 10px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color: white;
     background: #002147;
@@ -20,6 +19,96 @@ section {
     min-height: 400px;
     padding: 100px 20vw;
 }
+
+
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: #4d4d4d;
+    position: relative;
+  }
+  
+  .nav > .nav-header {
+    display: inline;
+  }
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .nav > .nav-btn {
+    display: none;
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .nav > .nav-links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  
+  @media (max-width:600px) {
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+  }
 
 /*Home page*/
 
@@ -124,54 +213,58 @@ section {
 .git:hover{
     transform: scale(1.8);
 }
-/* 
-.icon  {
-    width: 25%; 
-    display: inline-block;
-    padding: 5%;
-    Box-sizing: Border-box;
-    text-align: center;  
-    }
-    
-        
-    
-    #water{
-    animation: waterflow 15s linear infinite;
-    }
-    @keyframes waterflow {
-      from {transform:translateX(0px);
-      }
-    to {
-    transform:translateX(-300px);
-      }
-    }
-    
-    #water-rotate {
-     animation: water-rotate 15s linear infinite; 
-    -webkit-transform-origin: 100% 105%;
-    transform-origin: 100% 105%;
-    }
-    @keyframes water-rotate {
-     0% {
-      transform: rotateX(0deg);
-      }
-    50% {
-     transform: rotateX(360deg);
-      }
-     100% {
-     transform: rotateX(0deg);
-      } 
-    }
-     */
+
 /* map elements */
 
 
+.csv {
+    text-align: center;
+}
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+}
 #map {
     width: 80%;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8vw;
+    margin-top: 2vw;
 
     
 }
@@ -196,7 +289,7 @@ td {
     width: 50%;
     left: 50%;
     margin-left: -25%;
-    top: 50px;
+    top: 90px;
 }
 
 .mapboxgl-ctrl-geocoder {

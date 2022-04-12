@@ -333,7 +333,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path) {
                         .selectAll("text")
                         .data(words)
                         .enter().append("text")
-                        .style("font-size", "2em")
+                        .style("font-size", "1em")
                         .style("fill", "white")
                         .attr("text-anchor", "middle")
                         .style("font-family", "'M PLUS Rounded 1c', sans-serif")

@@ -1,4 +1,10 @@
 window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, options);
+      });
+    
+      
     /**
      * Set mapbox access
      */
@@ -105,6 +111,7 @@ window.onload = function () {
      * Trigger chart and map functions when user searches for a waterbody
      */
     geocoder.on('result', (e) => {
+        document.querySelector('table').remove()
         let WBID_Select = e.result.properties.WBID;
         let Name_Select = e.result.properties.Name;
 
@@ -114,7 +121,7 @@ window.onload = function () {
         d3.selectAll("#my_dataviz2 > *").remove();
         d3.selectAll("#my_dataviz4 > *").remove();
 
-        document.getElementById("scale").innerHTML = "You are viewing the latest data for: " + Name_Select;
+        document.getElementById("scale").innerHTML = "Ecological Status: " + Name_Select;
 
         var eco = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/eco-class.csv"
         var emo_freq_path = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/emolex-frequency.csv"

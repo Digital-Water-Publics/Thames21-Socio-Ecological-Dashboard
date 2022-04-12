@@ -16,8 +16,8 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js">
-    </script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+ 
     <link rel="stylesheet"
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
         type="text/css">
@@ -29,102 +29,44 @@
 </head>
 
 <body>
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            EI Catchment Explorer
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="//github.io/jo_geek" target="_blank">Home</a>
+          <a href="http://stackoverflow.com/users/4084003/" target="_blank">About Project</a>
+          <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Data</a>
+        </div>
+      </div>
 
-    <div id="map"></div>
+<div style="margin-top: 5em;">
+  <h2 id="scale"> 🌊 </h2>    
+
+    
+  <div id="csv">
+    <table></table>
+  </div>
+</div>
+
+      <div id="map"></div>
 
 
 <div id="geocoder" class="geocoder"></div>
 
-    <h2 id="scale"> Search for a River </h2>    
-
-    
-    <div id="csv"></div>
-
-    <!-- <div id="wb-legend" class="legend">
-        <h4>Sentiment Polarity Score</h4>
-    </div>
 
 
-    <div id="wb-legend" class="legend">
-        <h4>Sentiment Polarity Category</h4>
-        <div><span style="background-color: #b92727"></span>Negative Sentiment Engagement</div>
-        <div><span style="background-color: #f2ee0f"></span>Neutral Sentiment Engagement</div>
-        <div><span style="background-color: #1a8812"></span>Positive Sentiment Engagement</div>
-
-        <p style="width: 100%;">
-            The <b>Sentiment Polarity Category</b> tells us how people feel when they mention a river in their 
-            tweets. Sentiment polarity means whether the feelings they express in the language of their 
-            tweets are positive or negative (or neutral). 
-        </br></br>
-           <i> How does the Sentiment Polarity Category algorithm work?</i>
-        </br></br>
-            First, we assign each tweet a score between 10 for extremely positive and -10 for extremely 
-            negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at 
-            four geographical scales, namely river basin district, management catchment, operational 
-            catchment, and water body. At each scale, we then sort tweets classified into three categories:
-            Negative Sentiment Engagement, which comprises tweets with a polarity score in the lower 
-            third (between -3.336 and -0.59) and is coloured red on the map; Neutral Sentiment 
-            Engagement, which comprises tweets with a polarity score in the middle third (between -
-            0.059 and 0.303) and is coloured yellow; and Positive Sentiment Engagement, which 
-            comprises tweets with a polarity score in the upper third (between 0.303 and 7.857) and is 
-            coloured green. Each category contains roughly the same number of tweets.
-        </p>
-
-    </div>
-
-    <div id="oc-legend" class="legend">
-        <h4>Sentiment Polarity Category</h4>
-        <div><span style="background-color: #b92727"></span>Negative Sentiment Engagement</div>
-        <div><span style="background-color: #f2ee0f"></span>Neutral Sentiment Engagement</div>
-        <div><span style="background-color: #1a8812"></span>Positive Sentiment Engagement</div>
-
-        <p style="width: 100%;">
-            The <b>Sentiment Polarity Category</b> tells us how people feel when they mention a river in their 
-            tweets. Sentiment polarity means whether the feelings they express in the language of their 
-            tweets are positive or negative (or neutral). 
-        </br></br>
-           <i> How does the Sentiment Polarity Category algorithm work?</i>
-        </br></br>
-            First, we assign each tweet a score between 10 for extremely positive and -10 for extremely 
-            negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at 
-            four geographical scales, namely river basin district, management catchment, operational 
-            catchment, and water body. At each scale, we then sort tweets classified into three categories:
-            Negative Sentiment Engagement, which comprises tweets with a polarity score in the lower 
-            third (between -3.336 and -0.59) and is coloured red on the map; Neutral Sentiment 
-            Engagement, which comprises tweets with a polarity score in the middle third (between -
-            0.059 and 0.303) and is coloured yellow; and Positive Sentiment Engagement, which 
-            comprises tweets with a polarity score in the upper third (between 0.303 and 7.857) and is 
-            coloured green. Each category contains roughly the same number of tweets.
-        </p>
-
-    </div>
-
-    <div id="mc-legend" class="legend" style="display: none">
-        <h4>Sentiment Polarity Category</h4>
-        <div><span style="background-color: #b92727"></span>Negative Sentiment Engagement</div>
-        <div><span style="background-color: #f2ee0f"></span>Neutral Sentiment Engagement</div>
-        <div><span style="background-color: #1a8812"></span>Positive Sentiment Engagement</div>
-
-        <p style="width: 100%;">
-            The <b>Sentiment Polarity Category</b> tells us how people feel when they mention a river in their 
-            tweets. Sentiment polarity means whether the feelings they express in the language of their 
-            tweets are positive or negative (or neutral). 
-        </br></br>
-           <i> How does the Sentiment Polarity Category algorithm work?</i>
-        </br></br>
-            First, we assign each tweet a score between 10 for extremely positive and -10 for extremely 
-            negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at 
-            four geographical scales, namely river basin district, management catchment, operational 
-            catchment, and water body. At each scale, we then sort tweets classified into three categories:
-            Negative Sentiment Engagement, which comprises tweets with a polarity score in the lower 
-            third (between -3.336 and -0.59) and is coloured red on the map; Neutral Sentiment 
-            Engagement, which comprises tweets with a polarity score in the middle third (between -
-            0.059 and 0.303) and is coloured yellow; and Positive Sentiment Engagement, which 
-            comprises tweets with a polarity score in the upper third (between 0.303 and 7.857) and is 
-            coloured green. Each category contains roughly the same number of tweets.
-        </p>
-    </div> -->
-<!-- Create a div where the graph will take place -->
 
 
 <div>
@@ -139,18 +81,24 @@
         <a href="#">View Raw Data</a>
     </div>
     <div id="my_dataviz" style="  margin-left: auto;
-    margin-right: auto;width:60%"></div>
-
-<h3>Emotions detected in tweets (% of total tweets)</h3>
-<p>Emotions are defined though NRC Emotional Lexiocon</p>
-<a href="#">View Raw Data</a>
-<div id="my_dataviz1" style="  margin-left: auto;
-margin-right: auto;width:50%"></div>
+    margin-right: auto;"></div>
+<div class="section group">
+	<div class="col span_1_of_2">
+    <h3>Emotions detected in tweets (% of total tweets)</h3>
+    <p>Emotions are defined though NRC Emotional Lexiocon</p>
+    <a href="#">View Raw Data</a>
+    <div id="my_dataviz1" style="  margin-left: auto;
+    margin-right: auto;"></div>	</div>
+	<div class="col span_1_of_2">
     <h3>Common phrases associated with the water body </h3>
     <a href="#">View Raw Data</a>
 <div id="my_dataviz4" style="  margin-left: auto;
-margin-right: auto;width:50%"></div>
+margin-right: auto;"></div>
+</div>	</div>
 </div>
+
+
+
 
 
 </body>
