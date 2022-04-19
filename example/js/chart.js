@@ -4,9 +4,10 @@
  * @param {string} eco 
  * @param {string} emo_freq_path 
  * @param {string} nounphrase_path 
+ * @param {string} rnag_path 
  */
 
-function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path) {
+function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
 
     /**
      * 
@@ -249,7 +250,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path) {
                  color = d3.scaleOrdinal(d3.schemeCategory10);
              
              // append the svg object to the body of the page
-             var svg = d3.select("body").append("svg")
+             var svg = d3.select("#chart").append("svg")
                  .attr("width", width + margin.left + margin.right)
                  .attr("height", height + margin.top + margin.bottom)
                .append("g")
@@ -265,7 +266,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path) {
              var path = sankey.link();
              
              // load the data
-             d3.csv("sankey.csv", function(error, data) {
+             d3.csv(rnag_path, function(error, data) {
               
                //set up graph in same style as original example but empty
                graph = {"nodes" : [], "links" : []};
