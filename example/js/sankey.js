@@ -1,3 +1,8 @@
+
+/**
+ * 
+ * @returns D3 Sankey SVG
+ */
 d3.sankey = function() {
     var sankey = {},
         nodeWidth = 24,
