@@ -22,6 +22,7 @@
     <script type="text/javascript" src="example/js/search_centroids.js"></script>
     <script type="text/javascript" src="example/js/chart.js"></script>
     <script type="text/javascript" src="example/js/map.js"></script>
+    <script type="text/javascript" src="example/js/sankey.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap');
 
@@ -46,7 +47,26 @@
             width: 80vw;
             height: 80vh;
         }
+        .node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
 
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+
+.link:hover {
+  stroke-opacity: .5;
+}
         .controls {
             text-align: center;
         }
@@ -329,6 +349,45 @@
             float: right !important;
             margin-top: 50px !important;
         }
+        .node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+
+.link:hover {
+  stroke-opacity: .5;
+}.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+
+.link:hover {
+  stroke-opacity: .5;
+}
 
         /* Laptop config */
 
@@ -419,6 +478,7 @@ margin-right: auto;"></div>
             </div>
         </div>
     </div>
+    <p id ="chart"></p>
 
 
     <footer>
