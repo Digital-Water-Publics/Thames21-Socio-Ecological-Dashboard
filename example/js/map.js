@@ -120,6 +120,7 @@ window.onload = function () {
         d3.selectAll("#my_dataviz1 > *").remove();
         d3.selectAll("#my_dataviz2 > *").remove();
         d3.selectAll("#my_dataviz4 > *").remove();
+        d3.selectAll("#chart > *").remove();
 
         document.getElementById("scale").innerHTML = "Ecological Status: " + Name_Select;
 
@@ -130,7 +131,7 @@ window.onload = function () {
 
         var polarity = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/polarity-score.csv"
 
-        chart(polarity, eco, emo_freq_path, nounphrase_path)
+        chart(polarity, eco, emo_freq_path, nounphrase_path, rnag_path)
 
     });
 
