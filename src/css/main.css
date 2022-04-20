@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap');
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#my_dataviz {
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+}
+
+#my_dataviz1 {
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+}
+
+#my_dataviz2 {
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+}
+
+#my_dataviz4 {
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+}
+
+#chart {
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+}
+
+#my_dataviz3 {
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+}
+
+body {
+    --primary: #228ae3;
+    background: #080808;
+    color: white;
+    padding-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions {
+    background-color: #d2dce1 !important;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions>.active>a,
+.mapboxgl-ctrl-geocoder .suggestions>li>a:hover {
+    color: #d2dce1;
+    cursor: pointer;
+}
+
+.demo {
+    width: 45vw;
+    height: 75vh;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.div5 {
+    width: 80vw;
+    height: 80vh;
+}
+
+.node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+}
+
+.node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+
+.link:hover {
+    stroke-opacity: .5;
+}
+
+.controls {
+    text-align: center;
+}
+
+.control {
+    margin: 0px 20px;
+    cursor: pointer;
+}
+
+.demo-normal h1 {
+    padding: 35px 25px 0 25px;
+}
+
+.demo-btn {
+    margin: 50px 25px 0 25px;
+    padding-top: 50px;
+    border-top: 5px dotted var(--primary);
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.split {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.btn {
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    padding: 8px 15px;
+    outline: none;
+    font: 500 bold 16px 'Poppins', sans-serif;
+    box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.25);
+    transition: .3s all ease-in-out;
+}
+
+.btn_primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.btn_primary:hover {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.wave-container {
+    position: relative;
+    background: white;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+}
+
+.logos {
+    width: 50%;
+    float: right;
+    position: relative;
+
+}
+
+.logo_thames21 {
+    height: 15vw;
+    width: 15vw;
+}
+
+
+.logo_ox {
+    height: 5vw;
+    width: 15vw;
+}
+
+.row {
+    display: flex;
+}
+
+
+#scale {
+    text-align: center;
+    margin-bottom: -1em;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* map elements */
+
+
+.csv {
+    text-align: center;
+}
+
+/*  SECTIONS  */
+.section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child {
+    margin-left: 0;
+}
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    zoom: 1;
+    /* For IE 6/7 */
+}
+
+/*  GRID OF TWO  */
+.span_2_of_2 {
+    width: 100%;
+}
+
+.span_1_of_2 {
+    width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+    .col {
+        margin: 1% 0 1% 0%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .span_2_of_2,
+    .span_1_of_2 {
+        width: 100%;
+    }
+}
+
+#map {
+    width: 100%;
+    height: 40em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
+
+
+}
+
+.fadein {
+    opacity: 0;
+    -moz-transition: opacity 1.5s;
+    -webkit-transition: opacity 1.5s;
+    -o-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
+
+body.loaded .fadein {
+    opacity: 1;
+}
+
+body {
+    animation: 2s ease-out 0s 1 FadeIn;
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+table {
+    border-collapse: separate;
+    background-color: white;
+    border: 4px black solid;
+    font: 22px 'M PLUS Rounded 1c';
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+}
+
+td {
+    border: 1px black solid;
+    padding: 5px;
+}
+
+.geocoder {
+    position: absolute;
+    z-index: 5;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+    top: 90px;
+}
+
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+
+.mapboxgl-popup-content {
+    background-color: #002147 !important;
+    color: white !important;
+}
+
+.x.axis line {
+    stroke: white !important;
+}
+
+.y.axis line {
+    stroke: white !important;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions>.active>a,
+.mapboxgl-ctrl-geocoder .suggestions>li>a:hover {
+    background-color: #001620 !important;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions {
+    background-color: #001620 !important;
+}
+
+.legend {
+    background-color: #fff;
+    width: 30%;
+    border-radius: 3px;
+    top: 150px;
+    height: fit-content;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 10px;
+    position: absolute;
+    left: 10px;
+    color: #002147;
+    z-index: 1;
+}
+
+.legend h4 {
+    margin: 0 0 10px;
+}
+
+.legend div span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+}
+
+.layer1 {
+    background-image: url('../../wave-haikei.svg');
+}
+
+/*tooltip*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    float: right;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: #002147;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 0;
+    height: fit-content;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.twitter-share-button {
+    float: right !important;
+    margin-top: 50px !important;
+}
+
+.node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+}
+
+.node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+
+.link:hover {
+    stroke-opacity: .5;
+}
+
+.node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+}
+
+.node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+
+.link:hover {
+    stroke-opacity: .5;
+}
+
+/* Laptop config */
+
+@media only screen and (max-width: 1100px) {
+
+    .logos {
+        margin-top: -50vw;
+    }
+
+}
+
+/*MOBILE RESPONSIVE*/
+@media only screen and (max-width: 600px) {
+    .intro_text {
+        max-width: 100%;
+    }
+
+    .geocoder {
+        top: unset;
+        bottom: 100px;
+    }
+
+    .logos {
+        width: 50%;
+        float: right;
+        position: relative;
+        margin-top: -3vw;
+    }
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}

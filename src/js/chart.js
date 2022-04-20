@@ -469,39 +469,32 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                 // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
                 // Wordcloud features that are different from one word to the other must be here
                 var layout = d3.layout.cloud()
-                    .size([width3, height3])
-                    .words(data.map(function (d) {
-                        return {
-                            text: d.text
-                        };
-                    }))
-                    .padding(5) //space between words
-                    .rotate(0) // rotation angle in degrees
-                    .fontSize(32) // font size of words
-                    .on("end", draw);
-                layout.start();
-
-                // This function takes the output of 'layout' above and draw the words
-                // Wordcloud features that are THE SAME from one word to the other can be here
-                function draw(words) {
-                    svg4
-                        .append("g")
-                        .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-                        .selectAll("text")
-                        .data(words)
-                        .enter().append("text")
-                        .style("font-size", "1.4em")
-                        .style("fill", "black")
-                        .style("font-weight", "900")
-                        .attr("text-anchor", "middle")
-                        .style("font-family", "'M PLUS Rounded 1c', sans-serif")
-                        .attr("transform", function (d) {
-                            return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-                        })
-                        .text(function (d) {
-                            return d.text;
-                        })
-                };
+                .size([width3, height3])
+                .words(data.map(function(d) { return {text: d.text, size:d.n}; }))
+                .padding(5)        //space between words
+                .rotate(function() { return ~~(Math.random() * 2) * 90; })
+                .fontSize(function(d) { return d.size; })      // font size of words
+                .on("end", draw);
+              layout.start();
+              
+              // This function takes the output of 'layout' above and draw the words
+              // Wordcloud features that are THE SAME from one word to the other can be here
+              function draw(words) {
+                svg4
+                  .append("g")
+                    .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+                    .selectAll("text")
+                      .data(words)
+                    .enter().append("text")
+                      .style("font-size", function(d) { return d.size; })
+                      .style("fill", "black")
+                      .attr("text-anchor", "middle")
+                      .style("font-family", "Impact")
+                      .attr("transform", function(d) {
+                        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                      })
+                      .text(function(d) { return d.text; });
+              }
 
             });
 
