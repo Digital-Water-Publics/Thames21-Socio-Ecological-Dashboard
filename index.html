@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 
 	<link rel="icon" type="imgs/png" href="favcon.png" />
+	
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap');
 
@@ -256,7 +257,17 @@
 		.mapboxgl-ctrl-geocoder .suggestions {
 			background-color: #001620 !important;
 		}
-
+		body.loaded .fadein {
+    opacity: 1;
+}body{animation: 2s ease-out 0s 1 FadeIn;}
+@keyframes FadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
 		.legend {
 			background-color: #fff;
 			width: 30%;
@@ -360,6 +371,10 @@
 </head>
 
 <body>
+	<nav>
+		
+		<a href="index.html"> <h1>TAMYSE 🌊</h1></a>
+	</nav>
 	<div class="demo-normal">
 		<div class="wave-container">
 			<h1>TAMYSE</h1>

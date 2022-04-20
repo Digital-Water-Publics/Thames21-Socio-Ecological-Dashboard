@@ -111,7 +111,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                 }))
                 .range([0, width0]);
             xAxis = svg0.append("g")
-                .style("stroke", "white")
+                .style("stroke", "black")
                 .style("font-size", "16px")
                 .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                 .attr("transform", "translate(0," + height0 + ")")
@@ -124,7 +124,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                 })])
                 .range([height0, 0]);
             yAxis = svg0.append("g")
-                .style("stroke", "white")
+                .style("stroke", "black")
                 .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                 .style("font-size", "16px")
                 .call(d3.axisLeft(y));
@@ -156,7 +156,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                 .datum(data)
                 .attr("class", "line") // I add the class line to be able to modify this line later on.
                 .attr("fill", "none")
-                .attr("stroke", "steelblue")
+                .attr("stroke", "black")
                 .attr("stroke-width", 1.5)
                 .attr("d", d3.line()
                     .x(function (d) {
@@ -237,7 +237,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
              * Reasons for not achieving good
              * 
              */
-             var units = "Widgets";
+             var units = "Counts";
 
              // set the dimensions and margins of the graph
              var margin = {top: 10, right: 10, bottom: 10, left: 10},
@@ -403,7 +403,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                     .range([0, width]);
                 svg1.append("g")
                     .attr("transform", "translate(0," + height + ")")
-                    .style("stroke", "white")
+                    .style("stroke", "black")
                     .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                     .style("font-size", "16px")
                     .call(d3.axisBottom(x))
@@ -419,7 +419,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                     }))
                     .padding(.1);
                 svg1.append("g")
-                    .style("stroke", "white")
+                    .style("stroke", "black")
                     .style("font-size", "16px")
                     .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                     .call(d3.axisLeft(y))
@@ -437,7 +437,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                         return x(d.percent);
                     })
                     .attr("height", y.bandwidth())
-                    .attr("fill", "white")
+                    .attr("fill", "black")
 
             })
 
@@ -490,8 +490,9 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                         .selectAll("text")
                         .data(words)
                         .enter().append("text")
-                        .style("font-size", "1em")
-                        .style("fill", "white")
+                        .style("font-size", "1.4em")
+                        .style("fill", "black")
+                        .style("font-weight", "900")
                         .attr("text-anchor", "middle")
                         .style("font-family", "'M PLUS Rounded 1c', sans-serif")
                         .attr("transform", function (d) {

@@ -15,7 +15,7 @@ window.onload = function () {
      */
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/nathanaelisamapper/cl1wru0ya000p14mqmat9zxil', // style URL
+        style: 'mapbox://styles/nathanaelisamapper/cl26px4kg000h14lp32zp2c6p', // style URL
         center: [-0.118092, 51.509865],
         minZoom: 3,
         bearing: 15,
@@ -122,7 +122,10 @@ window.onload = function () {
         d3.selectAll("#my_dataviz4 > *").remove();
         d3.selectAll("#chart > *").remove();
 
-        document.getElementById("scale").innerHTML = "Ecological Status: " + Name_Select;
+        document.getElementById("scale").innerHTML = "Ecological Status & Reasons for not achieving good </br> " + Name_Select;
+        document.getElementById("twitter_feels").innerHTML = "How do Twitter users feel about " + Name_Select;
+
+        document.getElementById("raw_data").href = "https://github.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/tree/main/pot-mi/Open-Data/Thames/" + WBID_Select;
 
         var eco = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/eco-class.csv"
         var emo_freq_path = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/emolex-frequency.csv"

@@ -26,6 +26,32 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap');
 
+        @keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#my_dataviz{
+    animation:3s ease-out 3s 1 slideInFromLeft;
+}
+#my_dataviz1{
+    animation:3s ease-out 3s 1 slideInFromLeft;
+}
+#my_dataviz2{
+    animation:3s ease-out 3s 1 slideInFromLeft;
+}
+#my_dataviz4{
+    animation:3s ease-out 3s 1 slideInFromLeft;
+}
+#chart{
+    animation:3s ease-out 3s 1 slideInFromLeft;
+}
+#my_dataviz3{
+    animation:3s ease-out 3s 1 slideInFromLeft;
+}
         body {
             --primary: #228ae3;
             background: #080808;
@@ -33,7 +59,13 @@
             padding-bottom: 40px;
             font-family: 'Poppins', sans-serif;
         }
-
+        .mapboxgl-ctrl-geocoder .suggestions {
+  background-color: #d2dce1 !important;
+}
+.mapboxgl-ctrl-geocoder .suggestions > .active > a, .mapboxgl-ctrl-geocoder .suggestions > li > a:hover {
+  color: #d2dce1;
+  cursor: pointer;
+}
         .demo {
             width: 45vw;
             height: 75vh;
@@ -229,14 +261,33 @@
         }
 
         #map {
-            width: 35%;
-            height: 400px;
+            width: 100%;
+height: 40em;
             margin-left: auto;
             margin-right: auto;
             margin-top: 2vw;
 
 
         }
+        .fadein {
+    opacity: 0;
+    -moz-transition: opacity 1.5s;
+    -webkit-transition: opacity 1.5s;
+    -o-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
+
+body.loaded .fadein {
+    opacity: 1;
+}body{animation: 2s ease-out 0s 1 FadeIn;}
+@keyframes FadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
 
         table {
             border-collapse: separate;
@@ -435,20 +486,46 @@
 </head>
 
 <body>
-
+<nav>
+   <a href="index.html"> <h1>TAMYSE 🌊</h1></a>
+</nav>
     <div class="wave-container">
-        <h1>TAMYSE</h1>
-        <div style="margin-top: 5em;">
-            <h2 id="scale"> 🌊 </h2>
-
-
-            <div id="csv">
-                <table></table>
+        
+        <div>
+            <h2 id ="twitter_feels" style="text-align: center;">How do Twitter users feel about...</h2>
+    
+            <div>
+           
+                <div style="margin-top: 8em;">
+                    <h3>Weekly Mean Saliency of Tweets on Twitter</h3>
+                    <p style="width: 100%;"> Each tweet includes a score between 5 for extremely positive and -5 for extremely
+                        negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at
+                        four geographical scales, namely river basin district, management catchment, operational
+                        catchment, and water body. </p>
+                    <a id="raw_data" href="#">View Raw Data</a>
+                </div>
+                <div id="my_dataviz" style="  margin-left: auto;
+            margin-right: auto;"></div>
+                <div class="section group">
+                    <div class="col span_1_of_2">
+                        <h3>Emotions detected in tweets (% of total tweets)</h3>
+                        <p>Emotions are defined though NRC Emotional Lexiocon</p>
+                        <a href="#" id="raw_data">View Raw Data</a>
+                        <div id="my_dataviz1" style="  margin-left: auto;
+            margin-right: auto;"></div>
+                    </div>
+                    <div class="col span_1_of_2">
+                        <h3>Common phrases associated with the water body </h3>
+                        <a href="#" id="raw_data">View Raw Data</a>
+                        <div id="my_dataviz4" style="  margin-left: auto;
+        margin-right: auto;"></div>
+                    </div>
+                </div>
             </div>
-            <p id="chart"></p>
         </div>
+    
+       
 
-        <div id="map"></div>
 
 
         <div id="geocoder" class="geocoder"></div>
@@ -459,38 +536,15 @@
         </svg>
     </div>
 
-    <div>
-        <h2 style="text-align: center;">Emotional AI Data</h2>
-
-        <div>
-            <h3>Weekly Mean Saliency of Tweets on Twitter</h3>
-            <p style="width: 100%;"> Each tweet includes a score between 5 for extremely positive and -5 for extremely
-                negative (but tweets will usually fall somewhere in between). Then, we aggregate tweets at
-                four geographical scales, namely river basin district, management catchment, operational
-                catchment, and water body. </p>
-            <a href="#">View Raw Data</a>
-        </div>
-        <div id="my_dataviz" style="  margin-left: auto;
-    margin-right: auto;"></div>
-        <div class="section group">
-            <div class="col span_1_of_2">
-                <h3>Emotions detected in tweets (% of total tweets)</h3>
-                <p>Emotions are defined though NRC Emotional Lexiocon</p>
-                <a href="#">View Raw Data</a>
-                <div id="my_dataviz1" style="  margin-left: auto;
-    margin-right: auto;"></div>
-            </div>
-            <div class="col span_1_of_2">
-                <h3>Common phrases associated with the water body </h3>
-                <a href="#">View Raw Data</a>
-                <div id="my_dataviz4" style="  margin-left: auto;
-margin-right: auto;"></div>
-            </div>
-        </div>
+<div style="height: 100%;background-color:white;">
+    <h2 id="scale" style="color: black;">  </h2>
+        
+    <div id="csv">
+        <table></table>
     </div>
-
-
-
+    <div id="chart" style="width: 37%;margin-left: auto;margin-right: auto;"></div>
+        <div id="map"></div>
+</div>
     <footer>
         <div class="wave-container">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -508,7 +562,7 @@ margin-right: auto;"></div>
 
     </footer>
 
-
+</script>
 </body>
 
 </html>
