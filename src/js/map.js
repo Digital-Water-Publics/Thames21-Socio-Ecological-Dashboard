@@ -98,7 +98,7 @@ window.onload = function () {
     const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
-        countries: 'gbz',
+        countries: 'gb',
         placeholder: 'Search for a Waterbody',
         zoom: 12,
         localGeocoder: forwardGeocoder
@@ -122,10 +122,16 @@ window.onload = function () {
         d3.selectAll("#my_dataviz4 > *").remove();
         d3.selectAll("#chart > *").remove();
 
-        document.getElementById("scale").innerHTML = "Ecological Status & Reasons for not achieving good </br> " + Name_Select;
-        document.getElementById("twitter_feels").innerHTML = "How do Twitter users feel about " + Name_Select;
 
+        document.getElementById("twitter_feels").innerHTML = "How do people feel about " + Name_Select;
+        document.getElementById("temporal_graph_text").innerHTML = "How people feel about " + Name_Select;
+        document.getElementById("emotions_graph_text").innerHTML = "Basic emotions associated with " + Name_Select;
+        document.getElementById("phrases_graph_text").innerHTML = "Common phrases associated with " + Name_Select;
+        document.getElementById("eco_status_text").innerHTML = "Ecological status of " + Name_Select;
+        document.getElementById("rngag_graph_text").innerHTML = "Why is " + Name_Select + "not achieving good status?"
         document.getElementById("raw_data").href = "https://github.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/tree/main/pot-mi/Open-Data/Thames/" + WBID_Select;
+        document.getElementById("raw_data1").href = "https://github.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/tree/main/pot-mi/Open-Data/Thames/" + WBID_Select;
+        document.getElementById("raw_data2").href = "https://github.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/tree/main/pot-mi/Open-Data/Thames/" + WBID_Select;
 
         var eco = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/eco-class.csv"
         var emo_freq_path = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/emolex-frequency.csv"
