@@ -34,9 +34,10 @@
     animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
+
 body {
     --primary: #228ae3;
-    background: #080808;
+    background: #09F;;
     color: white;
     padding-bottom: 40px;
     font-family: 'Poppins', sans-serif;
