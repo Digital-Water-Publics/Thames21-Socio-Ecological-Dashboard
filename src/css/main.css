@@ -33,8 +33,22 @@
 #my_dataviz3 {
     animation: 3s ease-out 3s 1 slideInFromLeft;
 }
+.team_li {
+    padding: 0.5em;
+    display: block;
+}
+footer{
+    text-align: center;
+    height: 2em;
+}
+ul li {
+    display: inline-block;
+    padding: 1em;
+    font-size: 2em;
+ }
 
 
+ 
 body {
     --primary: #228ae3;
     background: #09F;;

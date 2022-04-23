@@ -99,7 +99,7 @@ window.onload = function () {
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
         countries: 'gb',
-        placeholder: 'Search for a Waterbody',
+        placeholder: 'Search for a river',
         zoom: 12,
         localGeocoder: forwardGeocoder
     });
