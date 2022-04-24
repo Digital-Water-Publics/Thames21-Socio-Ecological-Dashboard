@@ -44,10 +44,10 @@ footer {
     height: 2em;
 }
 
-ul li {
+.foots ul li {
     display: inline-block;
     padding: 1em;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 
