@@ -156,13 +156,19 @@ h1 {
     border-color: var(--primary);
     color: var(--primary);
 }
+html {
+    scroll-behavior: smooth;
+  }
 
 .wave-container {
     position: relative;
     background: white;
     color: black;
-    text-align: center;
+    text-align: left;
     overflow: hidden;
+    margin-right: 2em;
+    margin-left: 2em;
+
 }
 
 .logos {
