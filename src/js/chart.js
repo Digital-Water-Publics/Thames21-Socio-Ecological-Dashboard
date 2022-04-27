@@ -382,7 +382,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                     bottom: 40,
                     left: 185
                 },
-                width1 = 550 - margin.left - margin.right,
+                width1 = 500 - margin.left - margin.right,
                 height2 = 400 - margin.top - margin.bottom;
 
             // append the svg object to the body of the page
@@ -454,7 +454,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                     bottom: 20,
                     left: 20
                 },
-                width3 = 800 - margin.left - margin.right,
+                width3 = 500 - margin.left - margin.right,
                 height3 = 400 - margin.top - margin.bottom;
 
             // append the svg object to the body of the page
