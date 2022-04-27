@@ -129,18 +129,17 @@ window.onload = function () {
         document.getElementById("phrases_graph_text").innerHTML = "Common phrases associated with " + Name_Select;
         document.getElementById("eco_status_text").innerHTML = "Ecological status of " + Name_Select;
         document.getElementById("rngag_graph_text").innerHTML = "Why is " + Name_Select + "not achieving good status?"
-        document.getElementById("rngag_graph_text").innerHTML = Name_Select + " Ma"
-        document.getElementById("raw_data").href = "https://github.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/tree/main/pot-mi/Open-Data/Thames/" + WBID_Select;
-        document.getElementById("raw_data1").href = "https://github.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/tree/main/pot-mi/Open-Data/Thames/" + WBID_Select;
-        document.getElementById("raw_data2").href = "https://github.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/tree/main/pot-mi/Open-Data/Thames/" + WBID_Select;
+        document.getElementById("rngag_graph_text").innerHTML = Name_Select;
 
         var eco = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/eco-class.csv"
         var emo_freq_path = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/emolex-frequency.csv"
         var rnag_path = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/rnag.csv"
         var nounphrase_path = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/common-nounphrase.csv"
-
         var polarity = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/polarity-score.csv"
 
+        document.getElementById("raw_data").href = polarity;
+        document.getElementById("raw_data1").href = emo_freq_path;
+        document.getElementById("raw_data2").href = nounphrase_path;
         chart(polarity, eco, emo_freq_path, nounphrase_path, rnag_path)
 
     });
