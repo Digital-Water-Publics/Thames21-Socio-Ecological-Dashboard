@@ -129,7 +129,7 @@ window.onload = function () {
         document.getElementById("phrases_graph_text").innerHTML = "Common phrases associated with " + Name_Select;
         document.getElementById("eco_status_text").innerHTML = "Ecological status of " + Name_Select;
         document.getElementById("rngag_graph_text").innerHTML = "Why is " + Name_Select + "not achieving good status?"
-        document.getElementById("rngag_graph_text").innerHTML = Name_Select;
+        document.getElementById("rngag_graph_text").innerHTML = "Reasons for not achieving good ecological status of " + Name_Select;
 
         var eco = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/eco-class.csv"
         var emo_freq_path = "https://raw.githubusercontent.com/Digital-Water-Publics/Thames21-Socio-Ecological-Data/main/pot-mi/Open-Data/Thames/" + WBID_Select + "/emolex-frequency.csv"
