@@ -68,11 +68,11 @@ window.onload = function () {
             // Handle queries with different capitalization
             // than the source data by calling toLowerCase().
             if (
-                feature.properties.Name
+                feature.properties.name
                 .toLowerCase()
                 .includes(query.toLowerCase())
             ) {
-                feature['place_name'] = `${feature.properties.Name}`;
+                feature['place_name'] = `${feature.properties.name}`;
                 feature['center'] = feature.geometry.coordinates;
 
                 matchingFeatures.push(feature);
