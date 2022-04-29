@@ -98,7 +98,7 @@ window.onload = function () {
     const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
-        countries: 'gb',
+        countries: 'gbx',
         placeholder: 'Search for a river',
         zoom: 12,
         localGeocoder: forwardGeocoder
