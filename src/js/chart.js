@@ -473,7 +473,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                 .words(data.map(function(d) { return {text: d.text, size:d.n}; }))
                 .padding(5)        //space between words
                 .rotate(function() { return ~~(Math.random() * 2) * 90; })
-                .fontSize(function(d) { return d.size; })      // font size of words
+                .fontSize(function(d) { return d.size*1.2; })      // font size of words
                 .on("end", draw);
               layout.start();
               
@@ -486,10 +486,10 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
                     .selectAll("text")
                       .data(words)
                     .enter().append("text")
-                      .style("font-size", function(d) { return d.size; })
                       .style("fill", "black")
                       .attr("text-anchor", "middle")
                       .style("font-family", "Impact")
+                      .style("font-size", function(d) {return d.size + "px"; })
                       .attr("transform", function(d) {
                         return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
                       })
