@@ -15,7 +15,7 @@ window.onload = function () {
      */
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/nathanaelisamapper/cl26px4kg000h14lp32zp2c6p', // style URL
+        style: 'mapbox://styles/nathanaelisamapper/cl2p9h5e6001e15l2db6sb56i', // style URL
         center: [-0.118092, 51.509865],
         minZoom: 3,
         bearing: 15,
@@ -49,11 +49,11 @@ window.onload = function () {
                     ['linear'],
                     ['get', 'group'],
                     1,
-                    '#b92727',
+                    '#006992',
                     2,
-                    '#f2ee0f',
+                    '#E1ED00',
                     3,
-                    '#1a8812'
+                    '#E1ED00'
                 ]
             }
         });
