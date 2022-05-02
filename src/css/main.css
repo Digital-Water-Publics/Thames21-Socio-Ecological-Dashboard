@@ -368,14 +368,13 @@ td {
 .legend {
     background-color: #fff;
     width: 30%;
+    height: 100%;
     border-radius: 3px;
-    top: 150px;
     height: fit-content;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font: 16px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     padding: 10px;
     position: absolute;
-    left: 10px;
     color: #002147;
     z-index: 1;
 }
@@ -387,9 +386,9 @@ td {
 .legend div span {
     border-radius: 50%;
     display: inline-block;
-    height: 10px;
+    height: 20px;
     margin-right: 5px;
-    width: 10px;
+    width: 20px;
 }
 
 .layer1 {
