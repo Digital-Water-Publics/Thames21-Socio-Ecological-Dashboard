@@ -68,11 +68,11 @@ window.onload = function () {
             // Handle queries with different capitalization
             // than the source data by calling toLowerCase().
             if (
-                feature.properties.Name
+                feature.properties.name
                 .toLowerCase()
                 .includes(query.toLowerCase())
             ) {
-                feature['place_name'] = `${feature.properties.Name}`;
+                feature['place_name'] = `${feature.properties.name}`;
                 feature['center'] = feature.geometry.coordinates;
 
                 matchingFeatures.push(feature);
@@ -88,7 +88,7 @@ window.onload = function () {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senticent_polarity).toFixed(4) + "</br> <p> Waterbody ecological status: " + e.features[0].properties.status)
+            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senti_score).toFixed(4))
             .addTo(map);
     });
 
@@ -98,7 +98,7 @@ window.onload = function () {
     const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
-        countries: 'gb',
+        countries: 'gbx',
         placeholder: 'Search for a river',
         zoom: 12,
         localGeocoder: forwardGeocoder
