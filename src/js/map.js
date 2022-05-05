@@ -113,7 +113,7 @@ window.onload = function () {
     geocoder.on('result', (e) => {
         document.querySelector('table').remove()
         let WBID_Select = e.result.properties.WBID;
-        let Name_Select = e.result.properties.Name;
+        let Name_Select = e.result.properties.name;
 
 
         d3.selectAll("#my_dataviz > *").remove();
