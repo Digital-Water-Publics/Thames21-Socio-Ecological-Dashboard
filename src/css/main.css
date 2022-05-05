@@ -280,6 +280,11 @@ text-align: center;
 
 }
 
+a:hover{
+    text-decoration:underline;
+    scale: 1.2;
+}
+
 .fadein {
     opacity: 0;
     -moz-transition: opacity 1.5s;
