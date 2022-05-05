@@ -25,20 +25,67 @@
 
     <h2 style="text-align: center;font-size: 6em;"> About</h2>
 
-    <p style="text-align: left;font-size: 2.5em;margin-right: 1em;margin-left: 1em;">The Thames River Sentiment
-        Dashboard is a collaboration between the
-        <a href="http://geog.ox.ac.uk">University of Oxford </a> and <a href="http://thames21.org.uk">Thames21</a>. This
-        project is supported by the University of Oxford's ESRC Impact Acceleration Account.
-        </br>
-        </br>
-        The dashboard is built with emotional AI, natural language processing, and data from the Twitter API and the
-        Environment Agency. Please visit our <a href="https://github.com/Digital-Water-Publics">GitHub</a> to learn more
-        about our methods and data.
-        </br> </br>
+    <div style="text-align: left;font-size: 2em;margin-right: 1em;margin-left: 1em;">
+        <p>People talk about rivers online. From complaints about pollution to celebrations of wildlife, rivers provoke
+            passionate social media comments. When people express their feelings about rivers on Twitter, we get a
+            glimpse of how nature affects human wellbeing. </p>
 
-        For feedback please send us an email or follow us on Twitter.
-    </p>
+        <p>The River Sentiment Dashboard displays social media sentiment about more than 500 rivers and other
+            waterbodies in the Thames basin in England alongside data about their ecological status.
+        </p>
+        <p>The Thames River Sentiment
+            Dashboard is a collaboration between the
+            <a href="http://geog.ox.ac.uk">University of Oxford </a> and <a href="http://thames21.org.uk">Thames21</a>.
+            This
+            project is supported by the University of Oxford's ESRC Impact Acceleration Account.</p>
+
+        <p>We welcome your feedback! Please contact us on Twitter <a href="https://twitter.com/RiverSentiment">@RiverSentiment</a> or send an email to helge.peters at
+            ouce.ox.ac.uk</p>
+    </div>
+
+    <h2 style="text-align: center;font-size: 6em;"> How to use this tool</h2>
+    <div style="text-align: left;font-size: 2em;margin-right: 1em;margin-left: 1em;">
+        <p>You can search for a river or look it up on a map. For each river, the dashboard shows how social media
+            sentiment about the waterbody has shifted between positive and negative over time. The dashboard also shows
+            which basic emotions Twitter users express when talking about the waterbody and which phrases they commonly
+            use in their tweets. Using this data you can explore the link between human wellbeing and river water
+            quality by comparing social media sentiment with ecological status. You can also explore the connection
+            between the common phrases people use to describe the river with the reasons why it is not achieving good
+            ecological status. If you want to compare between different rivers, you can use the colour-coded map at the
+            bottom, which displays overall positive (blue), neutral (yellow), and negative (red) sentiment about all of
+            the waterbodies in the Thames basin.</p>
+    </div>
+
+    <h2 style="text-align: center;font-size: 6em;"> Methods and data</h2>
+    <div style="text-align: left;font-size: 2em;margin-right: 1em;margin-left: 1em;">
+        <p>We mine the Twitter platform for tweets containing the names of 541 waterbodies in the Thames river basin
+            management catchment. The total number of tweets collected is over 4 million tweets with a temporal
+            resolution of January 1st 2008 to the present day. Datasets are aggregated at the water body scale and
+            contain sentiment polarity, emotion detection, and common phrases. </p>
+        <p>Our method for sentiment analysis utilised an augmented version of the <a href="https://www.google.com/url?q=https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm&sa=D&source=docs&ust=1651765491419675&usg=AOvVaw0WCV5RxNeJ6PaSxIkB__fH">NRC Word-Emotion Association Lexicon</a> 
+            and a polarized context cluster algorithm in order to determine the sentiment score of a given waterbody.
+            The NRC Word-Emotion Association Lexicon is a dictionary of English words and their associations with eight
+            basic emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments
+            (negative and positive). The polarised context cluster algorithm gives better results than a simple lookup
+            dictionary approach and functions by clustering groups of words in a tweet (normally around 4) and checks
+            whether valence shifters effect the overall sentiment in the word cluster.
+            Data about the ecological status of waterbodies and the reasons for not achieving good status are from the <a href="https://environment.data.gov.uk/catchment-planning/">Environment Agency</a>.
+            
+        </p>
+        <p>Please visit our GitHub to learn more about our methods and data.</p>
+    </div>
+
+
+    <h2 style="text-align: center;font-size: 6em;"> Team</h2>
+    <ul class="">
+        <li style="font-size: 2.5em;" class="team_li">Nathanael Sheehan - Research Engineer and data scientist </li>
+        <li style="font-size: 2.5em;" class="team_li">Dr Helge Peters – Product owner and co-investigator</li>
+        <li style="font-size: 2.5em;" class="team_li">Prof Simon Dadson – Principal investigator </li>
+        <li style="font-size: 2.5em;" class="team_li">Will Oliver – Thames21 lead</li>
+        <li style="font-size: 2.5em;" class="team_li">Rebecca Turnpenney - Thames21 catchment expert</li>
+    </ul>
     </br>
+
     <!-- <div class="logos">
         <div class="row">
             <div class="column">
@@ -53,35 +100,24 @@
             </div>
         </div>
     </div> -->
-    <h2 style="text-align: center;font-size: 6em;"> Team</h2>
-    <ul class="">
-        <li style="font-size: 2.5em;" class="team_li">Nathanael Sheehan - Research Engineer and data scientist </li>
-        <li style="font-size: 2.5em;" class="team_li">Dr Helge Peters – Product owner and co-investigator</li>
-        <li style="font-size: 2.5em;" class="team_li">Prof Simon Dadson – Principal investigator </li>
-        <li style="font-size: 2.5em;" class="team_li">Will Oliver – Thames21 lead</li>
-        <li style="font-size: 2.5em;">Rebecca Turnpenney - Thames21 catchment expert</li>
-    </ul>
-    </br>
-
-
 
     <footer>
 
 
-<div class="foots">
-    <ul>
-        <li>
-            <a href="about.html">About</a>
-        </li>
-        <li>
-            <a href="https://github.com/Digital-Water-Publics">Github</a>
-        </li>
-        <li>
-            <a href="https://twitter.com/camelliawater?lang=en">Twitter</a>
-        </li>
+        <div class="foots">
+            <ul>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Digital-Water-Publics/Thames21-Socio-Ecological-Dashboard">Github</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/camelliawater?lang=en">Twitter</a>
+                </li>
 
-    </ul>
-</div>
+            </ul>
+        </div>
 
 
     </footer>
