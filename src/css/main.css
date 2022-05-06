@@ -1,37 +1,64 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap');
 
-@keyframes slideInFromLeft {
+@-webkit-keyframes slideInFromLeft {
     0% {
-        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
     }
 
     100% {
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
     }
 }
 
 #my_dataviz {
-    animation: 3s ease-out 3s 1 slideInFromLeft;
+    -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
+            animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
 #my_dataviz1 {
-    animation: 3s ease-out 3s 1 slideInFromLeft;
+    -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
+            animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
 #my_dataviz2 {
-    animation: 3s ease-out 3s 1 slideInFromLeft;
+    -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
+            animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
 #my_dataviz4 {
-    animation: 3s ease-out 3s 1 slideInFromLeft;
+    -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
+            animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
 #chart {
-    animation: 3s ease-out 3s 1 slideInFromLeft;
+    -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
+            animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
 #my_dataviz3 {
-    animation: 3s ease-out 3s 1 slideInFromLeft;
+    -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
+            animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
 .team_li {
@@ -130,9 +157,15 @@ h1 {
 }
 
 .split {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
 }
 
 .btn {
@@ -141,7 +174,10 @@ h1 {
     padding: 8px 15px;
     outline: none;
     font: 500 bold 16px 'Poppins', sans-serif;
-    box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.25);
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
     transition: .3s all ease-in-out;
 }
 
@@ -189,6 +225,8 @@ text-align: center;
 }
 
 .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -287,7 +325,6 @@ a:hover{
 
 .fadein {
     opacity: 0;
-    -moz-transition: opacity 1.5s;
     -webkit-transition: opacity 1.5s;
     -o-transition: opacity 1.5s;
     transition: opacity 1.5s;
@@ -298,7 +335,8 @@ body.loaded .fadein {
 }
 
 body {
-    animation: 2s ease-out 0s 1 FadeIn;
+    -webkit-animation: 2s ease-out 0s 1 FadeIn;
+            animation: 2s ease-out 0s 1 FadeIn;
     
 }
 p {
@@ -308,6 +346,16 @@ body, html {
     margin:0;
     padding:0;
  }
+
+@-webkit-keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes FadeIn {
     0% {
@@ -375,8 +423,11 @@ td {
     width: 30%;
     height: 100%;
     border-radius: 3px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     font: 16px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     padding: 10px;
     position: absolute;
@@ -416,6 +467,8 @@ td {
     text-align: left;
     border-radius: 6px;
     padding: 5px 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 
     /* Position the tooltip */
