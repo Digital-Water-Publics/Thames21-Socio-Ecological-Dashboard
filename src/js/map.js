@@ -7,6 +7,11 @@ window.onload = function () {
       
     /**
      * Set mapbox access
+     * TODO
+     * increase the number of results being shown back
+     * rejig the map colors
+     * examine the thames (everloe to thame) riverline
+     * better search algorithms
      */
     mapboxgl.accessToken =
         'pk.eyJ1IjoibmF0aGFuYWVsaXNhbWFwcGVyIiwiYSI6ImNrODNiZzdoZTA4Y2gzZ281YmJiMHNwOWIifQ.d2ntY86sJ7DR7011dUJ2cw';
