@@ -104,8 +104,9 @@ window.onload = function () {
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
         countries: 'gbx',
-        placeholder: 'Search for a river',
+        placeholder: 'Search for a river to find out how it makes people feel',
         zoom: 12,
+        limit: 10,
         localGeocoder: forwardGeocoder
     });
 
