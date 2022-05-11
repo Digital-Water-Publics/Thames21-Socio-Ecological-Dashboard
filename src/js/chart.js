@@ -97,7 +97,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
         // When reading the csv, I must format variables:
         function (d) {
             return {
-                date: d3.timeParse("%Y-%m-%d")(d.created_at),
+                date: d3.timeParse("%Y-%m-%d")(d.Date),
                 value: d.mean_senti
             }
         },
@@ -119,9 +119,7 @@ function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
 
             // Add Y axis
             var y = d3.scaleLinear()
-                .domain([-5, d3.max(data, function (d) {
-                    return +d.value;
-                })])
+                .domain([-5, 5])
                 .range([height0, 0]);
             yAxis = svg0.append("g")
                 .style("stroke", "black")
