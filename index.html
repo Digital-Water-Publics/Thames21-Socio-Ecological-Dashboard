@@ -10,24 +10,17 @@
 	<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
 		type="text/css">
-	<link rel="stylesheet" href="src/css/main.css">
+	<link rel="stylesheet" href="src/css/main.min.css">
 	<link rel="icon" type="imgs/png" href="imgs/favcon.png" />
 
 
 </head>
 
 <body>
-	<!-- <nav style="text-align: center;">
-		<a href="index.html">
-			<h1>🌊River Sentiment🌊</h1>
-		</a>
 
-	</nav> -->
 	<div class="demo-normal">
 
-		<h1 style="font-size: 6em;
-			padding: unset;
-			margin-bottom: 0px;margin-left:5%;">River Sentiment Dashboard</h1>
+		<h1 class="title">River Sentiment Dashboard</h1>
 		<p style="margin-left:5%;margin-right: 5%;font-size: 2em;">People talk about rivers online: from complaints about pollution to celebrations of wildlife, rivers provoke passionate social media comments. When people express their feelings about rivers on Twitter, we get a glimpse of how nature affects human wellbeing. The River Sentiment Dashboard displays social media sentiment alongside data about the ecological status of more than 450 rivers in the Thames basin in England. This prototype has been developed by Oxford University and Thames21.
 		</p>
 
@@ -45,43 +38,29 @@
 
 
 
-	<div style="height: 100%;background-color:white;">
-		<div class="wave-container" style="margin-top: -2em;">
+	<div class="wavey">
+		<div class="wave-container">
 
 			<div>
-				<h2 id="twitter_feels" style="text-align: center;">How do you feel about your local river?</h2>
+				<h2 id="twitter_feels">How do you feel about your local river?</h2>
 
 				<div>
 					<a href="#map">
-						<p style="margin-top: 8vh;text-decoration: underline;text-align: left;margin-left: 2em;">Find on
-							a Map</p>
+						<p class="foam">Find on a Map</p>
 					</a>
-					<div style="margin-top: 2em;margin-right: 5em;">
-						<h3 id="temporal_graph_text" style="text-align: left;
-						overflow: hidden;
-						margin-right: 2em;
-						margin-left: 2em;">How people feel about...</h3>
-						<p style="width: 100%;text-align: left;
-						overflow: hidden;
-						margin-right: 2em;
-						margin-left: 2em;">
+					<div class="reults-block">
+						<h3 id="temporal_graph_text" class="feelabout">How people feel about...</h3>
+						<p class="pp">
 							This graph shows how positively or negatively people felt about a river over time. When the line goes up, people expressed positive feelings about the river. If it goes down, then they expressed negative feelings. Using natural language processing on millions of tweets, we assign each tweet mentioning a river by name a sentiment score between 5 (very positive) and minus-5 (very negative). The graph displays the monthly mean score. Click and zoom to increase the temporal resolution to daily view. Double-click to return to the default view. Hint: when you tweet about a river, make sure to mention its full name. Then our algorithm is more likely to pick up your tweet.</p>
 						<a id="raw_data" href="#">View Raw Data</a>
 					</div>
 
 
-					<div id="my_dataviz" style="  margin-left: auto;
-            margin-right: auto;"></div>
+					<div id="my_dataviz"></div>
 					<div class="section group">
 						<div class="col span_1_of_2">
-							<h3 id="emotions_graph_text" style="text-align: left;
-							overflow: hidden;
-							margin-right: 2em;
-							margin-left: 2em;">Basic emotions associated with...</h3>
-							<p style="text-align: left;
-							overflow: hidden;
-							margin-right: 2em;
-							margin-left: 2em;">This bar chart shows the kinds of emotions people express when tweeting about a river.
+							<h3 id="emotions_graph_text" >Basic emotions associated with...</h3>
+							<p class="pp2">This bar chart shows the kinds of emotions people express when tweeting about a river.
 								For instance, the words people use to tweet about pollution might be associated with
 								disgust or the words they use about wild swimming might be associated with joy. The data
 								show the percentages of eight basic emotions detected in any tweets mentioning a river
@@ -89,19 +68,16 @@
 								anticipation, trust, surprise, sadness, joy, and disgust in English-language tweets.
 							</p>
 							<a href="#" id="raw_data1">View Raw Data</a>
-							<div id="my_dataviz1" style="  margin-left: auto;margin-right: auto;"></div>
+							<div id="my_dataviz1"></div>
 						</div>
 						<div class="col span_1_of_2">
 							<h3 id="phrases_graph_text">Common phrases associated with... </h3>
-							<p style="text-align: left;
-							overflow: hidden;
-							margin-right: 2em;
-							margin-left: 2em;">This word cloud shows the most common phrases people use when tweeting about
+							<p class="pp2">This word cloud shows the most common phrases people use when tweeting about
 								this river. The results give an indication how frequent certain topics come up in
 								connection with a river. We conduct frequency analysis to count the distribution of noun
 								phrases (n-grams) in all tweets mentioning a river by name.</p>
 							<a href="#" id="raw_data2">View Raw Data</a>
-							<div id="my_dataviz4" style="  margin-left: auto; margin-right: auto;"></div>
+							<div id="my_dataviz4"></div>
 						</div>
 					</div>
 				</div>
@@ -115,11 +91,8 @@
 
 		</div>
 
-		<h3 style="text-align: center;color: black;" id="eco_status_text">Ecological status of...</h2>
-			<p style="  text-align: left;
-			overflow: hidden;
-			margin-right: 2em;
-			margin-left: 2em;color: black;">This table shows how the Environment Agency assessed the
+		<h3 class="feelabout" id="eco_status_text">Ecological status of...</h2>
+			<p class="pp2">This table shows how the Environment Agency assessed the
 				environmental quality of the river over time. Ecological status can be either high, good, moderate, poor
 				or bad. According to the EA their assessment of ecological status is based on biological quality,
 				general chemical and physico-chemical quality, water quality with respect to specific pollutants, and
@@ -129,25 +102,21 @@
 				<table></table>
 			</div>
 
-			<h3 style="text-align: center;color: black;" id="rngag_graph_text">Why is ...not achieving good status?</h2>
-				<p style="  text-align: left;
-				overflow: hidden;
-				margin-right: 2em;
-				margin-left: 2em;color: black;">This diagram shows what keeps the river from achieving good
+			<h3 class="feelabout" id="rngag_graph_text">Why is ...not achieving good status?</h2>
+				<p class="pp2">This diagram shows what keeps the river from achieving good
 					ecological status. The diagram shows the relative responsibility of certain sectors of society
 					(left) for the environmental issues (right) that stand in the way of improving the quality of the
 					river. We plot Environment Agency data of the “reasons for not achieving good (RNAG)” from the <a
 						href="https://environment.data.gov.uk/catchment-planning/">Catchment Data Explorer</a>.</p>
-				<div id="chart" style=" display: flex;
-		justify-content: center;;"></div>
-				<h3 id="map_text" style="color:black;text-align:center">Map</h3>
+				<div id="chart"></div>
+				<h3 id="map_text">Map</h3>
 				<div id="map">
 					<div id="oc-legend" class="legend">
 						<h4>Sentiment Polarity Score</h4>
-						<div><span style="background-color: #EE5252"></span>Negative (-1.1 to 0.26)</div>
-						<div><span style="background-color: #E1ED00"></span>Neutral (0.26 to 0.4)</div>
-						<div><span style="background-color: #006992"></span>Positive (0.4 to 2.9)</div>
-						<p style="width: 100%;">The <b>Sentiment Polarity Score</b> measures how positively or
+						<div><span class="neggy"></span>Negative (-1.1 to 0.26)</div>
+						<div><span class="neuty"></span>Neutral (0.26 to 0.4)</div>
+						<div><span class="pozzy"></span>Positive (0.4 to 2.9)</div>
+						<p class="sen-score">The <b>Sentiment Polarity Score</b> measures how positively or
 							negatively people talk
 							about rivers on Twitter. The score can have a value between -5 (extremely negative) and 5
 							(extremely
@@ -185,10 +154,12 @@
 	<script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
 	<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
 	<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-
-
-	<script type="text/javascript" src="src/js/build.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js">
+	</script>
+<script type="text/javascript" src="src/js/geocoder_centroids.js"></script>
+<script type="text/javascript" src="src/js/vis.js"></script>
+<script type="text/javascript" src="src/js/build.js"></script>
 
 </body>
 

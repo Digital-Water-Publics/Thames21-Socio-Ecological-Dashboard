@@ -7,62 +7,84 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap');
 
-a{text-decoration: underline;}
+a {
+    text-decoration: underline;
+}
 
 @-webkit-keyframes slideInFromLeft {
     0% {
         -webkit-transform: translateX(-100%);
-                transform: translateX(-100%);
+        transform: translateX(-100%);
     }
 
     100% {
         -webkit-transform: translateX(0);
-                transform: translateX(0);
+        transform: translateX(0);
     }
 }
 
 @keyframes slideInFromLeft {
     0% {
         -webkit-transform: translateX(-100%);
-                transform: translateX(-100%);
+        transform: translateX(-100%);
     }
 
     100% {
         -webkit-transform: translateX(0);
-                transform: translateX(0);
+        transform: translateX(0);
     }
 }
-
+#rngag_graph_text.eco-stat{
+    color: black;
+}
+#emotions_graph_text {
+    text-align: left;
+    overflow: hidden;
+    margin-right: 2em;
+    margin-left: 2em;
+}
+.pp2{text-align: left;
+    color: black;
+    overflow: hidden;
+    margin-right: 2em;
+    margin-left: 2em;}
+    
 #my_dataviz {
+    margin-left: auto;
+    margin-right: auto;
     -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
-            animation: 3s ease-out 3s 1 slideInFromLeft;
+    animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
 #my_dataviz1 {
     -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
-            animation: 3s ease-out 3s 1 slideInFromLeft;
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+    margin-left: auto;margin-right: auto;
 }
 
 #my_dataviz2 {
     -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
-            animation: 3s ease-out 3s 1 slideInFromLeft;
+    animation: 3s ease-out 3s 1 slideInFromLeft;
 }
 
 #my_dataviz4 {
     -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
-            animation: 3s ease-out 3s 1 slideInFromLeft;
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+    margin-left: auto; margin-right: auto;
 }
 
 #chart {
     -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
-            animation: 3s ease-out 3s 1 slideInFromLeft;
+    animation: 3s ease-out 3s 1 slideInFromLeft;
+    display: flex;
+		justify-content: center;
 }
 
 #my_dataviz3 {
     -webkit-animation: 3s ease-out 3s 1 slideInFromLeft;
-            animation: 3s ease-out 3s 1 slideInFromLeft;
+    animation: 3s ease-out 3s 1 slideInFromLeft;
 }
-
+.eco_stat{text-align: center;color: black;}
 .team_li {
     padding: 0.5em;
     display: block;
@@ -93,13 +115,19 @@ body {
 .mapboxgl-ctrl-geocoder .suggestions {
     background-color: #d2dce1 !important;
 }
+#map_text{
+    color:black;text-align:center
+}
 
 .mapboxgl-ctrl-geocoder .suggestions>.active>a,
 .mapboxgl-ctrl-geocoder .suggestions>li>a:hover {
     color: #d2dce1;
     cursor: pointer;
 }
-
+.neggy{background-color: #EE5252}
+.neuty{background-color: #E1ED00}
+.pozzy{background-color: #006992}
+.sen-score{width: 100%;}
 .demo {
     width: 45vw;
     height: 75vh;
@@ -163,11 +191,11 @@ h1 {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
 }
 
 .btn {
@@ -177,7 +205,7 @@ h1 {
     outline: none;
     font: 500 bold 16px 'Poppins', sans-serif;
     -webkit-box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.25);
-            box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.25);
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
     transition: .3s all ease-in-out;
@@ -194,16 +222,18 @@ h1 {
     border-color: var(--primary);
     color: var(--primary);
 }
+
 html {
     scroll-behavior: smooth;
-  }
+}
 
 .wave-container {
     position: relative;
     background: white;
     color: black;
-text-align: center;
+    text-align: center;
     overflow: hidden;
+    margin-top: -2em;
 
 
 }
@@ -320,8 +350,8 @@ text-align: center;
 
 }
 
-a:hover{
-  
+a:hover {
+
     scale: 1.2;
 }
 
@@ -338,16 +368,19 @@ body.loaded .fadein {
 
 body {
     -webkit-animation: 2s ease-out 0s 1 FadeIn;
-            animation: 2s ease-out 0s 1 FadeIn;
-    
+    animation: 2s ease-out 0s 1 FadeIn;
+
 }
+
 p {
     word-spacing: 0.3em;
 }
-body, html {
-    margin:0;
-    padding:0;
- }
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
 
 @-webkit-keyframes FadeIn {
     0% {
@@ -429,7 +462,7 @@ td {
     height: -moz-fit-content;
     height: fit-content;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     font: 16px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     padding: 10px;
     position: absolute;
@@ -458,7 +491,7 @@ td {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
-    float: right;
+
 }
 
 .tooltip .tooltiptext {
@@ -485,6 +518,38 @@ td {
 .twitter-share-button {
     float: right !important;
     margin-top: 50px !important;
+}
+
+#twitter_feels {
+    text-align: center;
+}
+
+.foam {
+    margin-top: 8vh;
+    text-decoration: underline;
+    text-align: left;
+    margin-left: 2em;
+}
+
+.results-block {
+    margin-top: 2em;
+    margin-right: 5em;
+}
+
+.feelabout {
+    text-align: left;
+    overflow: hidden;
+    margin-right: 2em;
+    margin-left: 2em;
+    color: black;
+}
+
+.pp {
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    margin-right: 2em;
+    margin-left: 2em;
 }
 
 .node rect {
@@ -564,4 +629,16 @@ a:visited,
 a:active {
     color: inherit;
     text-decoration: underline;
+}
+
+.title {
+    font-size: 6em;
+    padding: unset;
+    margin-bottom: 0px;
+    margin-left: 3%;
+}
+
+.wavey {
+    height: 100%;
+    background-color: white;
 }
