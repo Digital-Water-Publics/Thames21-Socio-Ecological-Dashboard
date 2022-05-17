@@ -93,7 +93,7 @@ window.onload = function () {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senti_score).toFixed(4);
+            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senti_score).toFixed(4))
             .addTo(map);
     });
 
