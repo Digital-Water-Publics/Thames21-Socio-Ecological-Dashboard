@@ -9,6 +9,7 @@
 
 function chart(mean_senti_path, eco, emo_freq_path, nounphrase_path,rnag_path) {
 
+
     /**
      * 
      * Ecological status csv
