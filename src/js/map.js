@@ -54,11 +54,11 @@ window.onload = function () {
                     ['linear'],
                     ['get', 'group'],
                     1.0,
-                    '#006992',
+                    '#EE5252',
                     2.0,
                     '#E1ED00',
                     3.0,
-                    '#EE5252'
+                    '#006992'
                 ]
             }
         });
@@ -93,7 +93,7 @@ window.onload = function () {
         // Copy coordinates array.
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senti_score).toFixed(4)  + "</br> <p> Management Catchment: " + e.features[0].properties.MC + "</br> <p> Operational Catchment: " + e.features[0].properties.OC)
+            .setHTML('<p> Waterbody name: ' + e.features[0].properties.name + "</br> <p> Waterbody sentiment score: " + parseFloat(e.features[0].properties.senti_score).toFixed(4);
             .addTo(map);
     });
 
